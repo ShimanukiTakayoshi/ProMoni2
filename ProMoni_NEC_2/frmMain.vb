@@ -120,10 +120,10 @@
 
 
     '------いらないかもしれない変数
-    Public dtrg(1, 4) As String                '達成率計算用1
+    Public dtrg(1, 4) As String             '達成率計算用1
     Public dtrg1(4) As String               '達成率計算用2
     Public dtrg2(4) As String               '達成率計算用3
-    Public dnow(1, 4) As String                '達成率計算用4
+    Public dnow(1, 4) As String             '達成率計算用4
     Public drat(4) As String                '稼働率計算用
     Public ReDrawFlag(10) As Boolean        '最描写ﾌﾗｸﾞ
 
