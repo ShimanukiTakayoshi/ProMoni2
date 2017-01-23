@@ -61,3 +61,6 @@ C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\Pro
 C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\ProMoni2.exe
 C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\ProMoni2.xml
 C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\ProMoni2.pdb
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.exe
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.xml
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.pdb
