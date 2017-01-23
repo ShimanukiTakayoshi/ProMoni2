@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="ProductionMonitor.exe" version="1.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ProductionMonitor" version="1.0.5658.28031" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ProductionMonitor" version="1.0.5661.22383" language="neutral" processorArchitecture="msil" />
     <commandLine file="ProductionMonitor.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProductionMonitor.exe" size="276992">
-      <assemblyIdentity name="ProductionMonitor" version="1.0.5658.28031" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProductionMonitor.exe" size="275968">
+      <assemblyIdentity name="ProductionMonitor" version="1.0.5661.22383" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WwzvNQ9uYb1C/ZH1Rxe+YjSnKzg=</dsig:DigestValue>
+        <dsig:DigestValue>zDKCjlUOzj23BjyEQANTYduPQFQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

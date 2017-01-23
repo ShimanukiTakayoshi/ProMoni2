@@ -6,12 +6,14 @@
     Public DataFolder As String = "\Data"               'データフォルダ
     Public DekidakaFolder As String = "\Dekidaka"       '出来高フォルダ
     Public CaptureFolder As String = "\Capture"         'キャプチャーフォルダ
+    Public ShinchokuFolder As String = "\Shinchoku"     '進捗フォルダ
 
     Public ScreenSelect As Short = 1                    '表示スクリーン選択
     Public Ln As Short = 0                              '製造ライン番号
     Public DualMode As Boolean = False                  '２画面モード縦
     Public HoriMode As Boolean = False                  '２画面モード横
     Public EmExMode As Boolean = False                  'EM:False / EX:True
+    Public ModelName As String = ""                     '表示機種名
 
 
     Public Pln(1, 4) As Integer            '目標生産数
@@ -63,7 +65,7 @@
     Public DekidakaHosei(1) As Integer         '月度出来高補正値
 
     Public MemNowCh1(1, 4) As String           '一時保存用実績ﾃﾞｰﾀ
-    Public DebugMode As Boolean = True      'ﾃﾞﾊﾞｯｸﾞﾓｰﾄﾞ切換ﾌﾗｸﾞ
+    Public DebugMode As Boolean = False      'ﾃﾞﾊﾞｯｸﾞﾓｰﾄﾞ切換ﾌﾗｸﾞ
 
     Public Gp(2) As Integer                 '班別実績数
     Public GpTotal(1, 2) As Integer            '班別累計数
@@ -118,25 +120,30 @@
     Public Pen3 As Pen = New Pen(Color.Black, 3)
     Public Pen3r As Pen = New Pen(Color.Red, 3)
 
+    Public SaveDataFirstFlag As Boolean = True
+    Public SaveSubFolder As String
+    Public SaveFileName As String
+    Public SaveTimeH As String = "8"       'データ保存ファイル切替時間(H)
+    Public SaveTimeM As String = "0"      'データ保存ファイル切替時間(M)
+    Public SaveHour As String = ""
 
     '------いらないかもしれない変数
-    Public dtrg(1, 4) As String             '達成率計算用1
+    Public dtrg(1, 4) As String                '達成率計算用1
     Public dtrg1(4) As String               '達成率計算用2
     Public dtrg2(4) As String               '達成率計算用3
-    Public dnow(1, 4) As String             '達成率計算用4
+    Public dnow(1, 4) As String                '達成率計算用4
     Public drat(4) As String                '稼働率計算用
     Public ReDrawFlag(10) As Boolean        '最描写ﾌﾗｸﾞ
 
     'ﾒｲﾝ
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadModel()
         LoadSetting()
         WorkTimeCalc()
         initialize()
         LoadTmpCount()
         LoadDekidaka()
-        Dim a As Integer
-        a = 0
         LoadKinmu()
     End Sub
 
@@ -172,6 +179,7 @@
         NonAdjustRatioCount()
         DekidakaSum()
         DrawScreen()
+        SaveData()
     End Sub
 
     Private Sub timSaveTime_Tick(sender As Object, e As EventArgs) Handles timSaveTime.Tick
@@ -673,7 +681,7 @@
             LineNumber = "２"
         End If
         g.DrawString(LineNumber, gf72, gcBlack, 1022, 42)
-        g.DrawString("EM-No.", gf18, gcBlack, 1015, 28)
+        g.DrawString(ModelName + "-" + "No.", gf18, gcBlack, 1015, 28)
         g.DrawString("   ライン名", gf18, Lp(Ln), 65, 75)
         g.DrawString("巻線１号ﾗｲﾝ", gf18, Lp(Ln), 220, 75)
         g.DrawString("巻線２号ﾗｲﾝ", gf18, Lp(Ln), 220 + 160, 75)
@@ -973,7 +981,7 @@
             g.DrawLine(Pen3, Hl - 45, Ht + Hx + Hx * 4 * i, Hl + Hw, Ht + Hx + Hx * 4 * i)
         Next
         'タイトル
-        g.DrawString("リレー生産進捗集中モニター   Ver3.0", gf20, gcBlue, 130, 26)
+        g.DrawString(ModelName + "リレー生産進捗集中モニター   Ver3.0", gf20, gcBlue, 130, 26)
         g.DrawString("   ライン名", gf12, gcBlack, 125, 70)
         g.DrawString("巻線１号ﾗｲﾝ", gf12, gcBlack, 125 + Hy, 70)
         g.DrawString("巻線２号ﾗｲﾝ", gf12, gcBlack, 125 + Hy * 2, 70)
@@ -1348,7 +1356,7 @@
         Dim rect4 As New RectangleF(Hl + Hw + 70 + 7, Ht + 2, 31, 27)
         g.FillRectangle(Brushes.LemonChiffon, rect4)
         'タイトル
-        g.DrawString("リレー生産進捗集中モニター   Ver3.0", gf20, gcBlue, 130, 26)
+        g.DrawString(ModelName + "リレー生産進捗集中モニター   Ver3.0", gf20, gcBlue, 130, 26)
         g.DrawString("ライン名", gf12, gcBlack, 75, 70)
         g.DrawString("巻線１号ﾗｲﾝ", gf12, gcBlack, 25 + Hy, 70)
         g.DrawString("巻線２号ﾗｲﾝ", gf12, gcBlack, 25 + Hy * 2, 70)
@@ -1693,19 +1701,13 @@
     End Sub
 
     Public Sub DekidakaHozon()
-        Dim dtNow As DateTime = DateTime.Now
         Dim ToYear As Integer = CInt(Val(Strings.Left(CStr(Now), 4)))
         Dim ToMonth As Integer = CInt(Val(Strings.Mid(CStr(Now), 6, 2)))
         Dim Today As Integer = CInt(Val(Strings.Mid(CStr(Now), 9, 2)))
         Dim ToHour As Integer = CInt(Val(Strings.Mid(CStr(Now), 12, 2)))
-        Dim ToMinute As Integer = dtNow.Minute 'CInt(Val(Strings.Mid(CStr(Now), 15, 2)))
         Dim NewFileFlag As Boolean = False
-        Dim YakinEndHour As Integer = 0
-        Dim YakinEndMinute As Integer = End2M
-        If End2H <= 23 Then YakinEndHour = End2H Else YakinEndHour = End2H - 24
         '月末夜勤設定
-        'If Today = 1 And ToHour < 8 Then
-        If Today = 1 And (ToHour < YakinEndHour Or (ToHour = YakinEndHour And ToMinute < YakinEndMinute)) Then
+        If Today = 1 And ToHour < 8 Then
             NewFileFlag = True
             Select Case ToMonth
                 Case 1
@@ -1747,24 +1749,22 @@
         '出来高ファイルへ出力
         SvF1 = AppFolder & DataFolder & DekidakaFolder & "\Q" + SvF1 + ".txt"
         'SvF1 = AppFolder + "\DekidakaData\Q" + SvF1 + ".txt"
-        If System.IO.File.Exists(SvF1) Then
-            Try
-                System.IO.File.Delete(SvF1)
-                Dim sw As System.IO.StreamWriter
-                sw = New System.IO.StreamWriter(SvF1, True, System.Text.Encoding.GetEncoding(932))
-                'sw.WriteLine("日付,日勤出来高,夜勤出来高")
-                For i As Short = 1 To 31
-                    sw.WriteLine(Trim(Str(i)) + "," + Trim(Str(DekidakaDataDay(0, i))) + "," + Trim(Str(DekidakaDataNight(0, i))) + "," + Trim(Str(DekidakaDataDay(1, i))) + "," + Trim(Str(DekidakaDataNight(1, i))))
-                Next
-                sw.Close()
-                'SvFirstFlag = False
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-                Application.Exit()
-            End Try
-        Else
-            '新月出来高ファイル生成
-            'If NewFileFlag Then
+        Try
+            System.IO.File.Delete(SvF1)
+            Dim sw As System.IO.StreamWriter
+            sw = New System.IO.StreamWriter(SvF1, True, System.Text.Encoding.GetEncoding(932))
+            'sw.WriteLine("日付,日勤出来高,夜勤出来高")
+            For i As Short = 1 To 31
+                sw.WriteLine(Trim(Str(i)) + "," + Trim(Str(DekidakaDataDay(0, i))) + "," + Trim(Str(DekidakaDataNight(0, i))) + "," + Trim(Str(DekidakaDataDay(1, i))) + "," + Trim(Str(DekidakaDataNight(1, i))))
+            Next
+            sw.Close()
+            'SvFirstFlag = False
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Application.Exit()
+        End Try
+        '新月出来高ファイル生成
+        If NewFileFlag Then
             SvF1 = Strings.Left(CStr(Now), 4) + Strings.Mid(CStr(Now), 6, 2)
             SvF1 = AppFolder & DataFolder & DekidakaFolder & "\Q" + SvF1 + ".txt"
             Try
@@ -1789,7 +1789,6 @@
                 GpTotal(Ln, i) = 0
                 GpGeta(Ln, i) = 0
             Next
-            'End If
         End If
     End Sub
 
@@ -2145,6 +2144,24 @@
 
     '各ファイル操作
 
+    Public Sub LoadModel()
+        Dim x(20) As Integer
+        Dim sr As System.IO.StreamReader
+        Dim ofile As String = AppFolder & SystemFolder & "\Model.txt"
+        sr = New System.IO.StreamReader(ofile, System.Text.Encoding.GetEncoding(932))
+        Try
+            ModelName = Trim(sr.ReadLine())
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Application.Exit()
+        End Try
+        If ModelName = "EX" Then
+            EmExMode = True
+        Else
+            EmExMode = False
+        End If
+    End Sub
+
     Public Sub LoadSetting()
         Dim x(20) As Integer
         Dim sr As System.IO.StreamReader
@@ -2429,13 +2446,11 @@
     Public Sub LoadDekidaka()
         '今月の出来高ファイルを読み込む
         'Dim sr As System.IO.StreamReader
-        Dim dtNow As DateTime = DateTime.Now
         Dim zx As String = CStr(Now)
         Dim YearX As Integer = CInt(Val(Strings.Mid(CStr(Now), 1, 4)))
         Dim MonthX As Integer = CInt(Val(Strings.Mid(CStr(Now), 6, 2)))
         Dim DayX As Integer = CInt(Val(Strings.Mid(CStr(Now), 9, 2)))
         Dim HourX As Integer = CInt(Val(Strings.Mid(CStr(Now), 12, 2)))
-        Dim MinuteX As Integer = dtNow.Minute 'CInt(Val(Strings.Mid(CStr(Now), 15, 2)))
         Dim YearXN As Integer = 0
         Dim MonthXN As Integer = 0
         Dim YearXL As Integer = 0
@@ -2445,12 +2460,7 @@
         Dim p1 As Integer = 0
         Dim p2 As Integer = 0
         '今月のファイル名生成（各月１日の０：００～７：５９は前月に設定する）
-
-        Dim YakinEndHour As Integer = 0
-        Dim YakinEndMinute As Integer = End2M
-        If End2H <= 23 Then YakinEndHour = End2H Else YakinEndHour = End2H - 24
-        'If DayX = 1 And (HourX < 8) Then
-        If DayX = 1 And (HourX < YakinEndHour Or (HourX = YakinEndHour And MinuteX < YakinEndMinute)) Then
+        If DayX = 1 And HourX < 8 Then
             If MonthX = 1 Then
                 MonthX = 12
                 YearX -= 1
@@ -2579,8 +2589,61 @@
         'DekidakaGroup()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        frmIoMonitor.Show()
+    Public Sub CreateSaveFolder()
+        '保存先フォルダ生成
+        Dim dt As DateTime = DateTime.Now
+        Dim b As String = dt.ToString
+        SaveSubFolder = Strings.Left(Trim(b), 4) + Strings.Mid(Trim(b), 6, 2)
+        Dim di As System.IO.DirectoryInfo = New System.IO.DirectoryInfo(AppFolder + "\" + DataFolder + "\" + ShinchokuFolder + "\" + SaveSubFolder)
+        di.Create()
+    End Sub
+
+    Public Sub CreateSaveFileName()
+        '保存ファイル生成
+        Dim dt As DateTime = DateTime.Now
+        Dim b As String = dt.ToString
+        SaveFileName = Strings.Left(Trim(b), 4) + Strings.Mid(Trim(b), 6, 2) + Strings.Mid(Trim(b), 9, 2)
+        Dim Title As String = ""
+        Title = "機種,日付,時間,1巻1,1巻2,1前1,1前2,1後,2巻1,2巻2,2前1,2前2,2後" + vbCrLf
+        My.Computer.FileSystem.WriteAllText(AppFolder + "\" + DataFolder + "\" + ShinchokuFolder + "\" + SaveSubFolder + "\" + SaveFileName + ".CSV", Title, True)
+        My.Computer.FileSystem.WriteAllText(AppFolder + "\" + DataFolder + "\" + ShinchokuFolder + "\" + SaveSubFolder + "\" + SaveFileName + ".BKF", Title, True)
+    End Sub
+
+    Public Sub SaveData()
+        '起動初回確認
+        If SaveDataFirstFlag Then
+            CreateSaveFolder()
+            CreateSaveFileName()
+            SaveDataFirstFlag = False
+        End If
+        '現在時刻確認
+        Dim NowYearMonth As String = Replace(Strings.Left(CStr(Now), 7), "/", "")
+        Dim NowDate As String = Replace(Strings.Left(CStr(Now), 10), "/", "")
+        Dim NowTime As String = Replace(Strings.Mid(CStr(Now), 12, 5), ":", "")
+        'Dim NowHour As String = Strings.Left(NowTime, 2)
+        Dim S0 As String = CStr(Now)
+        Dim a0 As Integer = InStr(S0, " ")
+        Dim a1 As Integer = InStr(S0, ":")
+        Dim NowHour As String = Strings.Mid(S0, a0 + 1, (a1 - a0) - 1)
+        If NowDate <> SaveFileName And Val(NowTime) >= Val(SaveTimeH + SaveTimeM) Then
+            If NowYearMonth <> SaveSubFolder Then CreateSaveFolder()
+            CreateSaveFileName()
+        End If
+        Dim NowDateX As String = Strings.Left(CStr(Now), 10)
+        Dim NowTimeX As String = Strings.Mid(CStr(Now), 12, 8)
+        If SaveHour <> NowHour Then
+            'データ保存
+            Dim InputString As String = ModelName + "," + NowDateX + "," + NowTimeX + ","
+            For i As Integer = 0 To 1
+                For j As Integer = 0 To 4
+                    InputString = InputString + Trim(Str(WrCntA(i, j))) + ","
+                Next
+            Next
+            InputString = InputString + vbCrLf
+            My.Computer.FileSystem.WriteAllText(AppFolder + "\" + DataFolder + "\" + ShinchokuFolder + "\" + SaveSubFolder + "\" + SaveFileName + ".CSV", InputString, True)
+            My.Computer.FileSystem.WriteAllText(AppFolder + "\" + DataFolder + "\" + ShinchokuFolder + "\" + SaveSubFolder + "\" + SaveFileName + ".BKF", InputString, True)
+            SaveHour = NowHour
+        End If
     End Sub
 
 End Class

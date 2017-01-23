@@ -112,27 +112,6 @@ Friend Class Trigger
         Me.Button_DioExit = New System.Windows.Forms.Button()
         Me.Button_Exit = New System.Windows.Forms.Button()
         Me.Frame1 = New System.Windows.Forms.GroupBox()
-        Me._Check_15 = New System.Windows.Forms.CheckBox()
-        Me._Check_14 = New System.Windows.Forms.CheckBox()
-        Me._Check_13 = New System.Windows.Forms.CheckBox()
-        Me._Check_12 = New System.Windows.Forms.CheckBox()
-        Me._Check_11 = New System.Windows.Forms.CheckBox()
-        Me._Check_10 = New System.Windows.Forms.CheckBox()
-        Me._Check_9 = New System.Windows.Forms.CheckBox()
-        Me._Edit_Down_15 = New System.Windows.Forms.TextBox()
-        Me._Edit_Down_14 = New System.Windows.Forms.TextBox()
-        Me._Edit_Down_13 = New System.Windows.Forms.TextBox()
-        Me._Edit_Down_12 = New System.Windows.Forms.TextBox()
-        Me._Edit_Down_11 = New System.Windows.Forms.TextBox()
-        Me._Edit_Down_10 = New System.Windows.Forms.TextBox()
-        Me._Edit_Down_9 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_15 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_14 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_13 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_12 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_11 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_10 = New System.Windows.Forms.TextBox()
-        Me._Edit_Up_9 = New System.Windows.Forms.TextBox()
         Me._Check_8 = New System.Windows.Forms.CheckBox()
         Me._Edit_Down_8 = New System.Windows.Forms.TextBox()
         Me._Edit_Up_8 = New System.Windows.Forms.TextBox()
@@ -168,6 +147,27 @@ Friend Class Trigger
         Me.Edit_DeviceName = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me._Check_15 = New System.Windows.Forms.CheckBox()
+        Me._Check_14 = New System.Windows.Forms.CheckBox()
+        Me._Check_13 = New System.Windows.Forms.CheckBox()
+        Me._Check_12 = New System.Windows.Forms.CheckBox()
+        Me._Check_11 = New System.Windows.Forms.CheckBox()
+        Me._Check_10 = New System.Windows.Forms.CheckBox()
+        Me._Check_9 = New System.Windows.Forms.CheckBox()
+        Me._Edit_Down_15 = New System.Windows.Forms.TextBox()
+        Me._Edit_Down_14 = New System.Windows.Forms.TextBox()
+        Me._Edit_Down_13 = New System.Windows.Forms.TextBox()
+        Me._Edit_Down_12 = New System.Windows.Forms.TextBox()
+        Me._Edit_Down_11 = New System.Windows.Forms.TextBox()
+        Me._Edit_Down_10 = New System.Windows.Forms.TextBox()
+        Me._Edit_Down_9 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_15 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_14 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_13 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_12 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_11 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_10 = New System.Windows.Forms.TextBox()
+        Me._Edit_Up_9 = New System.Windows.Forms.TextBox()
         Me.Frame1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -274,279 +274,6 @@ Friend Class Trigger
         Me.Frame1.TabIndex = 3
         Me.Frame1.TabStop = False
         Me.Frame1.Text = "トリガ監視"
-        '
-        '_Check_15
-        '
-        Me._Check_15.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_15.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_15.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_15.Location = New System.Drawing.Point(784, 88)
-        Me._Check_15.Name = "_Check_15"
-        Me._Check_15.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_15.Size = New System.Drawing.Size(17, 17)
-        Me._Check_15.TabIndex = 55
-        Me._Check_15.Text = "Check1"
-        Me._Check_15.UseVisualStyleBackColor = False
-        '
-        '_Check_14
-        '
-        Me._Check_14.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_14.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_14.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_14.Location = New System.Drawing.Point(742, 88)
-        Me._Check_14.Name = "_Check_14"
-        Me._Check_14.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_14.Size = New System.Drawing.Size(17, 17)
-        Me._Check_14.TabIndex = 54
-        Me._Check_14.Text = "Check1"
-        Me._Check_14.UseVisualStyleBackColor = False
-        '
-        '_Check_13
-        '
-        Me._Check_13.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_13.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_13.Location = New System.Drawing.Point(696, 88)
-        Me._Check_13.Name = "_Check_13"
-        Me._Check_13.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_13.Size = New System.Drawing.Size(17, 17)
-        Me._Check_13.TabIndex = 53
-        Me._Check_13.Text = "Check1"
-        Me._Check_13.UseVisualStyleBackColor = False
-        '
-        '_Check_12
-        '
-        Me._Check_12.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_12.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_12.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_12.Location = New System.Drawing.Point(655, 88)
-        Me._Check_12.Name = "_Check_12"
-        Me._Check_12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_12.Size = New System.Drawing.Size(17, 17)
-        Me._Check_12.TabIndex = 52
-        Me._Check_12.Text = "Check1"
-        Me._Check_12.UseVisualStyleBackColor = False
-        '
-        '_Check_11
-        '
-        Me._Check_11.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_11.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_11.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_11.Location = New System.Drawing.Point(612, 88)
-        Me._Check_11.Name = "_Check_11"
-        Me._Check_11.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_11.Size = New System.Drawing.Size(17, 17)
-        Me._Check_11.TabIndex = 51
-        Me._Check_11.Text = "Check1"
-        Me._Check_11.UseVisualStyleBackColor = False
-        '
-        '_Check_10
-        '
-        Me._Check_10.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_10.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_10.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_10.Location = New System.Drawing.Point(568, 88)
-        Me._Check_10.Name = "_Check_10"
-        Me._Check_10.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_10.Size = New System.Drawing.Size(17, 17)
-        Me._Check_10.TabIndex = 50
-        Me._Check_10.Text = "Check1"
-        Me._Check_10.UseVisualStyleBackColor = False
-        '
-        '_Check_9
-        '
-        Me._Check_9.BackColor = System.Drawing.SystemColors.Control
-        Me._Check_9.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Check_9.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Check_9.Location = New System.Drawing.Point(524, 88)
-        Me._Check_9.Name = "_Check_9"
-        Me._Check_9.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Check_9.Size = New System.Drawing.Size(17, 17)
-        Me._Check_9.TabIndex = 49
-        Me._Check_9.Text = "Check1"
-        Me._Check_9.UseVisualStyleBackColor = False
-        '
-        '_Edit_Down_15
-        '
-        Me._Edit_Down_15.AcceptsReturn = True
-        Me._Edit_Down_15.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_15.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_15.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_15.Location = New System.Drawing.Point(772, 64)
-        Me._Edit_Down_15.MaxLength = 0
-        Me._Edit_Down_15.Name = "_Edit_Down_15"
-        Me._Edit_Down_15.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_15.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_15.TabIndex = 48
-        '
-        '_Edit_Down_14
-        '
-        Me._Edit_Down_14.AcceptsReturn = True
-        Me._Edit_Down_14.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_14.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_14.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_14.Location = New System.Drawing.Point(730, 64)
-        Me._Edit_Down_14.MaxLength = 0
-        Me._Edit_Down_14.Name = "_Edit_Down_14"
-        Me._Edit_Down_14.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_14.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_14.TabIndex = 47
-        '
-        '_Edit_Down_13
-        '
-        Me._Edit_Down_13.AcceptsReturn = True
-        Me._Edit_Down_13.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_13.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_13.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_13.Location = New System.Drawing.Point(687, 64)
-        Me._Edit_Down_13.MaxLength = 0
-        Me._Edit_Down_13.Name = "_Edit_Down_13"
-        Me._Edit_Down_13.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_13.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_13.TabIndex = 46
-        '
-        '_Edit_Down_12
-        '
-        Me._Edit_Down_12.AcceptsReturn = True
-        Me._Edit_Down_12.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_12.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_12.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_12.Location = New System.Drawing.Point(644, 64)
-        Me._Edit_Down_12.MaxLength = 0
-        Me._Edit_Down_12.Name = "_Edit_Down_12"
-        Me._Edit_Down_12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_12.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_12.TabIndex = 45
-        '
-        '_Edit_Down_11
-        '
-        Me._Edit_Down_11.AcceptsReturn = True
-        Me._Edit_Down_11.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_11.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_11.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_11.Location = New System.Drawing.Point(600, 64)
-        Me._Edit_Down_11.MaxLength = 0
-        Me._Edit_Down_11.Name = "_Edit_Down_11"
-        Me._Edit_Down_11.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_11.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_11.TabIndex = 44
-        '
-        '_Edit_Down_10
-        '
-        Me._Edit_Down_10.AcceptsReturn = True
-        Me._Edit_Down_10.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_10.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_10.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_10.Location = New System.Drawing.Point(556, 64)
-        Me._Edit_Down_10.MaxLength = 0
-        Me._Edit_Down_10.Name = "_Edit_Down_10"
-        Me._Edit_Down_10.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_10.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_10.TabIndex = 43
-        '
-        '_Edit_Down_9
-        '
-        Me._Edit_Down_9.AcceptsReturn = True
-        Me._Edit_Down_9.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Down_9.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Down_9.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Down_9.Location = New System.Drawing.Point(512, 64)
-        Me._Edit_Down_9.MaxLength = 0
-        Me._Edit_Down_9.Name = "_Edit_Down_9"
-        Me._Edit_Down_9.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Down_9.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Down_9.TabIndex = 42
-        '
-        '_Edit_Up_15
-        '
-        Me._Edit_Up_15.AcceptsReturn = True
-        Me._Edit_Up_15.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_15.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_15.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_15.Location = New System.Drawing.Point(772, 32)
-        Me._Edit_Up_15.MaxLength = 0
-        Me._Edit_Up_15.Name = "_Edit_Up_15"
-        Me._Edit_Up_15.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_15.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_15.TabIndex = 41
-        '
-        '_Edit_Up_14
-        '
-        Me._Edit_Up_14.AcceptsReturn = True
-        Me._Edit_Up_14.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_14.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_14.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_14.Location = New System.Drawing.Point(730, 32)
-        Me._Edit_Up_14.MaxLength = 0
-        Me._Edit_Up_14.Name = "_Edit_Up_14"
-        Me._Edit_Up_14.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_14.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_14.TabIndex = 40
-        '
-        '_Edit_Up_13
-        '
-        Me._Edit_Up_13.AcceptsReturn = True
-        Me._Edit_Up_13.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_13.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_13.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_13.Location = New System.Drawing.Point(687, 32)
-        Me._Edit_Up_13.MaxLength = 0
-        Me._Edit_Up_13.Name = "_Edit_Up_13"
-        Me._Edit_Up_13.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_13.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_13.TabIndex = 39
-        '
-        '_Edit_Up_12
-        '
-        Me._Edit_Up_12.AcceptsReturn = True
-        Me._Edit_Up_12.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_12.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_12.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_12.Location = New System.Drawing.Point(644, 32)
-        Me._Edit_Up_12.MaxLength = 0
-        Me._Edit_Up_12.Name = "_Edit_Up_12"
-        Me._Edit_Up_12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_12.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_12.TabIndex = 38
-        '
-        '_Edit_Up_11
-        '
-        Me._Edit_Up_11.AcceptsReturn = True
-        Me._Edit_Up_11.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_11.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_11.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_11.Location = New System.Drawing.Point(600, 32)
-        Me._Edit_Up_11.MaxLength = 0
-        Me._Edit_Up_11.Name = "_Edit_Up_11"
-        Me._Edit_Up_11.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_11.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_11.TabIndex = 37
-        '
-        '_Edit_Up_10
-        '
-        Me._Edit_Up_10.AcceptsReturn = True
-        Me._Edit_Up_10.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_10.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_10.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_10.Location = New System.Drawing.Point(556, 32)
-        Me._Edit_Up_10.MaxLength = 0
-        Me._Edit_Up_10.Name = "_Edit_Up_10"
-        Me._Edit_Up_10.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_10.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_10.TabIndex = 36
-        '
-        '_Edit_Up_9
-        '
-        Me._Edit_Up_9.AcceptsReturn = True
-        Me._Edit_Up_9.BackColor = System.Drawing.SystemColors.Window
-        Me._Edit_Up_9.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me._Edit_Up_9.ForeColor = System.Drawing.SystemColors.WindowText
-        Me._Edit_Up_9.Location = New System.Drawing.Point(512, 32)
-        Me._Edit_Up_9.MaxLength = 0
-        Me._Edit_Up_9.Name = "_Edit_Up_9"
-        Me._Edit_Up_9.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Edit_Up_9.Size = New System.Drawing.Size(39, 19)
-        Me._Edit_Up_9.TabIndex = 35
         '
         '_Check_8
         '
@@ -999,6 +726,279 @@ Friend Class Trigger
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "デバイス名："
         '
+        '_Check_15
+        '
+        Me._Check_15.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_15.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_15.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_15.Location = New System.Drawing.Point(784, 88)
+        Me._Check_15.Name = "_Check_15"
+        Me._Check_15.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_15.Size = New System.Drawing.Size(17, 17)
+        Me._Check_15.TabIndex = 55
+        Me._Check_15.Text = "Check1"
+        Me._Check_15.UseVisualStyleBackColor = False
+        '
+        '_Check_14
+        '
+        Me._Check_14.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_14.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_14.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_14.Location = New System.Drawing.Point(742, 88)
+        Me._Check_14.Name = "_Check_14"
+        Me._Check_14.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_14.Size = New System.Drawing.Size(17, 17)
+        Me._Check_14.TabIndex = 54
+        Me._Check_14.Text = "Check1"
+        Me._Check_14.UseVisualStyleBackColor = False
+        '
+        '_Check_13
+        '
+        Me._Check_13.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_13.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_13.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_13.Location = New System.Drawing.Point(696, 88)
+        Me._Check_13.Name = "_Check_13"
+        Me._Check_13.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_13.Size = New System.Drawing.Size(17, 17)
+        Me._Check_13.TabIndex = 53
+        Me._Check_13.Text = "Check1"
+        Me._Check_13.UseVisualStyleBackColor = False
+        '
+        '_Check_12
+        '
+        Me._Check_12.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_12.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_12.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_12.Location = New System.Drawing.Point(655, 88)
+        Me._Check_12.Name = "_Check_12"
+        Me._Check_12.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_12.Size = New System.Drawing.Size(17, 17)
+        Me._Check_12.TabIndex = 52
+        Me._Check_12.Text = "Check1"
+        Me._Check_12.UseVisualStyleBackColor = False
+        '
+        '_Check_11
+        '
+        Me._Check_11.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_11.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_11.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_11.Location = New System.Drawing.Point(612, 88)
+        Me._Check_11.Name = "_Check_11"
+        Me._Check_11.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_11.Size = New System.Drawing.Size(17, 17)
+        Me._Check_11.TabIndex = 51
+        Me._Check_11.Text = "Check1"
+        Me._Check_11.UseVisualStyleBackColor = False
+        '
+        '_Check_10
+        '
+        Me._Check_10.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_10.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_10.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_10.Location = New System.Drawing.Point(568, 88)
+        Me._Check_10.Name = "_Check_10"
+        Me._Check_10.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_10.Size = New System.Drawing.Size(17, 17)
+        Me._Check_10.TabIndex = 50
+        Me._Check_10.Text = "Check1"
+        Me._Check_10.UseVisualStyleBackColor = False
+        '
+        '_Check_9
+        '
+        Me._Check_9.BackColor = System.Drawing.SystemColors.Control
+        Me._Check_9.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Check_9.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Check_9.Location = New System.Drawing.Point(524, 88)
+        Me._Check_9.Name = "_Check_9"
+        Me._Check_9.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Check_9.Size = New System.Drawing.Size(17, 17)
+        Me._Check_9.TabIndex = 49
+        Me._Check_9.Text = "Check1"
+        Me._Check_9.UseVisualStyleBackColor = False
+        '
+        '_Edit_Down_15
+        '
+        Me._Edit_Down_15.AcceptsReturn = True
+        Me._Edit_Down_15.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_15.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_15.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_15.Location = New System.Drawing.Point(772, 64)
+        Me._Edit_Down_15.MaxLength = 0
+        Me._Edit_Down_15.Name = "_Edit_Down_15"
+        Me._Edit_Down_15.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_15.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_15.TabIndex = 48
+        '
+        '_Edit_Down_14
+        '
+        Me._Edit_Down_14.AcceptsReturn = True
+        Me._Edit_Down_14.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_14.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_14.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_14.Location = New System.Drawing.Point(730, 64)
+        Me._Edit_Down_14.MaxLength = 0
+        Me._Edit_Down_14.Name = "_Edit_Down_14"
+        Me._Edit_Down_14.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_14.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_14.TabIndex = 47
+        '
+        '_Edit_Down_13
+        '
+        Me._Edit_Down_13.AcceptsReturn = True
+        Me._Edit_Down_13.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_13.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_13.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_13.Location = New System.Drawing.Point(687, 64)
+        Me._Edit_Down_13.MaxLength = 0
+        Me._Edit_Down_13.Name = "_Edit_Down_13"
+        Me._Edit_Down_13.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_13.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_13.TabIndex = 46
+        '
+        '_Edit_Down_12
+        '
+        Me._Edit_Down_12.AcceptsReturn = True
+        Me._Edit_Down_12.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_12.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_12.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_12.Location = New System.Drawing.Point(644, 64)
+        Me._Edit_Down_12.MaxLength = 0
+        Me._Edit_Down_12.Name = "_Edit_Down_12"
+        Me._Edit_Down_12.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_12.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_12.TabIndex = 45
+        '
+        '_Edit_Down_11
+        '
+        Me._Edit_Down_11.AcceptsReturn = True
+        Me._Edit_Down_11.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_11.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_11.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_11.Location = New System.Drawing.Point(600, 64)
+        Me._Edit_Down_11.MaxLength = 0
+        Me._Edit_Down_11.Name = "_Edit_Down_11"
+        Me._Edit_Down_11.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_11.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_11.TabIndex = 44
+        '
+        '_Edit_Down_10
+        '
+        Me._Edit_Down_10.AcceptsReturn = True
+        Me._Edit_Down_10.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_10.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_10.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_10.Location = New System.Drawing.Point(556, 64)
+        Me._Edit_Down_10.MaxLength = 0
+        Me._Edit_Down_10.Name = "_Edit_Down_10"
+        Me._Edit_Down_10.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_10.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_10.TabIndex = 43
+        '
+        '_Edit_Down_9
+        '
+        Me._Edit_Down_9.AcceptsReturn = True
+        Me._Edit_Down_9.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Down_9.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Down_9.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Down_9.Location = New System.Drawing.Point(512, 64)
+        Me._Edit_Down_9.MaxLength = 0
+        Me._Edit_Down_9.Name = "_Edit_Down_9"
+        Me._Edit_Down_9.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Down_9.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Down_9.TabIndex = 42
+        '
+        '_Edit_Up_15
+        '
+        Me._Edit_Up_15.AcceptsReturn = True
+        Me._Edit_Up_15.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_15.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_15.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_15.Location = New System.Drawing.Point(772, 32)
+        Me._Edit_Up_15.MaxLength = 0
+        Me._Edit_Up_15.Name = "_Edit_Up_15"
+        Me._Edit_Up_15.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_15.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_15.TabIndex = 41
+        '
+        '_Edit_Up_14
+        '
+        Me._Edit_Up_14.AcceptsReturn = True
+        Me._Edit_Up_14.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_14.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_14.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_14.Location = New System.Drawing.Point(730, 32)
+        Me._Edit_Up_14.MaxLength = 0
+        Me._Edit_Up_14.Name = "_Edit_Up_14"
+        Me._Edit_Up_14.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_14.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_14.TabIndex = 40
+        '
+        '_Edit_Up_13
+        '
+        Me._Edit_Up_13.AcceptsReturn = True
+        Me._Edit_Up_13.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_13.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_13.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_13.Location = New System.Drawing.Point(687, 32)
+        Me._Edit_Up_13.MaxLength = 0
+        Me._Edit_Up_13.Name = "_Edit_Up_13"
+        Me._Edit_Up_13.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_13.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_13.TabIndex = 39
+        '
+        '_Edit_Up_12
+        '
+        Me._Edit_Up_12.AcceptsReturn = True
+        Me._Edit_Up_12.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_12.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_12.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_12.Location = New System.Drawing.Point(644, 32)
+        Me._Edit_Up_12.MaxLength = 0
+        Me._Edit_Up_12.Name = "_Edit_Up_12"
+        Me._Edit_Up_12.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_12.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_12.TabIndex = 38
+        '
+        '_Edit_Up_11
+        '
+        Me._Edit_Up_11.AcceptsReturn = True
+        Me._Edit_Up_11.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_11.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_11.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_11.Location = New System.Drawing.Point(600, 32)
+        Me._Edit_Up_11.MaxLength = 0
+        Me._Edit_Up_11.Name = "_Edit_Up_11"
+        Me._Edit_Up_11.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_11.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_11.TabIndex = 37
+        '
+        '_Edit_Up_10
+        '
+        Me._Edit_Up_10.AcceptsReturn = True
+        Me._Edit_Up_10.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_10.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_10.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_10.Location = New System.Drawing.Point(556, 32)
+        Me._Edit_Up_10.MaxLength = 0
+        Me._Edit_Up_10.Name = "_Edit_Up_10"
+        Me._Edit_Up_10.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_10.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_10.TabIndex = 36
+        '
+        '_Edit_Up_9
+        '
+        Me._Edit_Up_9.AcceptsReturn = True
+        Me._Edit_Up_9.BackColor = System.Drawing.SystemColors.Window
+        Me._Edit_Up_9.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me._Edit_Up_9.ForeColor = System.Drawing.SystemColors.WindowText
+        Me._Edit_Up_9.Location = New System.Drawing.Point(512, 32)
+        Me._Edit_Up_9.MaxLength = 0
+        Me._Edit_Up_9.Name = "_Edit_Up_9"
+        Me._Edit_Up_9.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Edit_Up_9.Size = New System.Drawing.Size(39, 19)
+        Me._Edit_Up_9.TabIndex = 35
+        '
         'Trigger
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 12)
@@ -1142,7 +1142,7 @@ Friend Class Trigger
 
     Public Sub DioInitialize()
         Ret = DioInit("DIO000", Id0)
-        Ret = DioInit("DIO000", Id)
+        Ret = DioInit("DIO001", Id)
         'If frmMain.EmExMode Then
         '    Ret = DioInit("DIO001", Id)
         'Else
@@ -1440,9 +1440,9 @@ Friend Class Trigger
                     Case 7
                         frmMain.NowC(1, 0) += 1
                     Case 8
-                        frmMain.NowC(1, 1) += 1
-                    Case 9
                         frmMain.NowC(1, 2) += 1
+                    Case 9
+                        frmMain.NowC(1, 1) += 1
                     Case 10
                         frmMain.NowC(1, 3) += 1
                     Case 11
@@ -1463,7 +1463,4 @@ Friend Class Trigger
         MyBase.WndProc(m)
     End Sub
 
-    Private Sub Frame1_Enter(sender As Object, e As EventArgs) Handles Frame1.Enter
-
-    End Sub
 End Class

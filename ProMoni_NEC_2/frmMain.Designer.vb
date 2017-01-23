@@ -44,12 +44,7 @@ Partial Class frmMain
         Me.mnuScreenH = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.timSaveTime = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.timScreenChange = New System.Windows.Forms.Timer(Me.components)
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,7 +53,7 @@ Partial Class frmMain
         Me.lblClock.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblClock.Font = New System.Drawing.Font("MS UI Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.lblClock.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.lblClock.Location = New System.Drawing.Point(993, 25)
+        Me.lblClock.Location = New System.Drawing.Point(989, 25)
         Me.lblClock.Name = "lblClock"
         Me.lblClock.Size = New System.Drawing.Size(315, 34)
         Me.lblClock.TabIndex = 0
@@ -75,7 +70,7 @@ Partial Class frmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.設定SToolStripMenuItem, Me.mnuClear, Me.mnuCalendar, Me.mnuScreen})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1370, 26)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1362, 26)
         Me.MenuStrip1.TabIndex = 75
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -188,71 +183,16 @@ Partial Class frmMain
         Me.timSaveTime.Enabled = True
         Me.timSaveTime.Interval = 100000
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(1151, 454)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(68, 41)
-        Me.Button1.TabIndex = 78
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(1267, 454)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(66, 40)
-        Me.Button2.TabIndex = 79
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        Me.Button2.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(1160, 425)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 12)
-        Me.Label1.TabIndex = 80
-        Me.Label1.Text = "Label1"
-        Me.Label1.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(1270, 425)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 12)
-        Me.Label2.TabIndex = 81
-        Me.Label2.Text = "Label2"
-        Me.Label2.Visible = False
-        '
         'timScreenChange
         '
         Me.timScreenChange.Interval = 1000
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(489, 0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 82
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
-        Me.Button3.Visible = False
         '
         'frmMain
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.LemonChiffon
-        Me.ClientSize = New System.Drawing.Size(1370, 750)
+        Me.ClientSize = New System.Drawing.Size(1362, 742)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lblClock)
         Me.Controls.Add(Me.MenuStrip1)
@@ -261,7 +201,7 @@ Partial Class frmMain
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = " リレーライン進捗モニター"
+        Me.Text = " リレー生産進捗モニター"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -282,10 +222,6 @@ Partial Class frmMain
     Friend WithEvents timSaveTime As System.Windows.Forms.Timer
     Friend WithEvents mnuClearTime As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuCalendar As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents timScreenChange As System.Windows.Forms.Timer
     Friend WithEvents mnuScreen As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreen1 As System.Windows.Forms.ToolStripMenuItem
@@ -293,5 +229,4 @@ Partial Class frmMain
     Friend WithEvents mnuScreenT As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreenV As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreenH As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class
