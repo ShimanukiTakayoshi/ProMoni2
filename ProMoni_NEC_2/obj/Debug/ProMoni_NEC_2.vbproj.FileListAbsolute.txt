@@ -61,6 +61,24 @@ C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\Pro
 C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\ProMoni2.exe
 C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\ProMoni2.xml
 C:\Users\pc356\Documents\Visual Studio 2013\Projects\ProMoni_NEC_2\obj\Debug\ProMoni2.pdb
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\bin\ProMoni2.exe.manifest
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\bin\ProMoni2.application
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\bin\ProMoni2.exe
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\bin\ProMoni2.pdb
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\bin\ProMoni2.xml
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmCalendar.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmClearTime.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmMain.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmMemo.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmSetPln.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmSetTkt.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmSystem.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.frmWorkTime.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProductionMonitor.Trigger.resources
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni_NEC_2.vbproj.GenerateResource.Cache
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.TrustInfo.xml
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.exe.manifest
+C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.application
 C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.exe
 C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.xml
 C:\Users\Kyoei_Shimanuki\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.pdb

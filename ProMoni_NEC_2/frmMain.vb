@@ -25,6 +25,7 @@
     Public Qu(1, 4) As Integer             '取り数（出力信号1ﾊﾟﾙｽ当りの生産数）
     Public Geta(1, 4) As Integer           '現在生産数補正値
     Public GpData(1, 2) As Integer           '班別データ（実績保存用）
+    Public GpData2(1, 2) As Integer          '班別データ（実績保存用）
 
     Public WtSh(7) As Integer           'ﾗｲﾝ停止開始時間(H)
     Public WtSm(7) As Integer           'ﾗｲﾝ停止開始時間(M)
@@ -60,7 +61,9 @@
     Public DekidakaDay(1) As Integer           '1直出来高
     Public DekidakaAll(1) As Integer           '合計出来高
     Public DekidakaDataDay(1, 31) As Integer   '1直各日出来高
+    Public DekidakaDataDay2(1, 31) As Integer   '1直各日出来高
     Public DekidakaDataNight(1, 31) As Integer '2直各日出来高
+    Public DekidakaDataNight2(1, 31) As Integer   '1直各日出来高
     Public DekidakaTotal(1) As Integer         '月度出来高
     Public DekidakaHosei(1) As Integer         '月度出来高補正値
 
@@ -68,10 +71,14 @@
     Public DebugMode As Boolean = False      'ﾃﾞﾊﾞｯｸﾞﾓｰﾄﾞ切換ﾌﾗｸﾞ
 
     Public Gp(2) As Integer                 '班別実績数
+    Public Gp2(2) As Integer                 '班別実績数
     Public GpTotal(1, 2) As Integer            '班別累計数
+    Public GpTotal2(1, 2) As Integer            '班別累計数
     Public GpGeta(1, 2) As Integer             '班別累計数補正値
+    Public GpGeta2(1, 2) As Integer             '班別累計数補正値
     Public GpChoku(2) As Integer            '班別可動日数ｶｳﾝﾄ
-    Public KinmuData(2) As String           '勤務ｶﾚﾝﾀﾞｰ
+    Public GpChoku2(2) As Integer            '班別可動日数ｶｳﾝﾄ
+    Public KinmuData(4) As String           '勤務ｶﾚﾝﾀﾞｰ
     Public Han As Integer = 2               '班編成数
     Public ProPause As Boolean = False      '2直終了後動作一時停止ﾌﾗｸﾞ
     Public Start1H As Integer               '1直開始(時間)
@@ -1595,12 +1602,19 @@
                 Gp(i) = 0
                 GpTotal(j, i) = 0
                 GpChoku(i) = 0
+                Gp2(i) = 0
+                GpTotal2(j, i) = 0
+                GpChoku2(i) = 0
             Next i
             For i As Integer = 1 To DayX
                 axx = CInt(Val(Strings.Mid(KinmuData(1), i, 1)))
                 If axx > 0 Then GpTotal(j, axx - 1) = GpTotal(j, axx - 1) + DekidakaDataDay(j, i) : GpChoku(axx - 1) += 1
                 axx = CInt(Val(Strings.Mid(KinmuData(2), i, 1)))
                 If axx > 0 Then GpTotal(j, axx - 1) = GpTotal(j, axx - 1) + DekidakaDataNight(j, i) : GpChoku(axx - 1) += 1
+                axx = CInt(Val(Strings.Mid(KinmuData(3), i, 1)))
+                If axx > 0 Then GpTotal(j, axx - 1) = GpTotal(j, axx - 1) + DekidakaDataDay2(j, i) : GpChoku2(axx - 1) += 1
+                axx = CInt(Val(Strings.Mid(KinmuData(4), i, 1)))
+                If axx > 0 Then GpTotal(j, axx - 1) = GpTotal(j, axx - 1) + DekidakaDataNight2(j, i) : GpChoku2(axx - 1) += 1
             Next
             For i As Integer = 0 To Han - 1
                 If GpChoku(i) > 0 Then
@@ -1609,6 +1623,12 @@
                     Gp(i) = 0
                 End If
                 GpData(j, i) = Gp(i)
+                If GpChoku2(i) > 0 Then
+                    Gp2(i) = CInt((GpTotal2(j, i) + GpGeta2(j, i)) / GpChoku2(i))
+                Else
+                    Gp2(i) = 0
+                End If
+                GpData2(j, i) = Gp2(i)
             Next
         Next j
     End Sub
@@ -2501,6 +2521,8 @@
             KinmuData(0) = sr.ReadLine()
             KinmuData(1) = sr.ReadLine()
             KinmuData(2) = sr.ReadLine()
+            KinmuData(3) = sr.ReadLine()
+            KinmuData(4) = sr.ReadLine()
             sr.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -2578,7 +2600,7 @@
             System.IO.File.Delete(AppFolder + "\Kinmu.txt")
             Dim sw As System.IO.StreamWriter
             sw = New System.IO.StreamWriter(AppFolder + "\Kinmu.txt", True, System.Text.Encoding.GetEncoding(932))
-            For i As Short = 0 To 2
+            For i As Short = 0 To 4
                 sw.WriteLine(KinmuData(i))
             Next i
             sw.Close()

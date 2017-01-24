@@ -1,6 +1,7 @@
 ﻿Public Class frmCalendar
 
     Private Sub frmCalendar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ライン１
         dgvCal.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         dgvCal.Columns.Add("0", "直")
         For i As Short = 1 To 31
@@ -18,6 +19,24 @@
         dgvCal.Columns(0).Width = 60
         dgvCal.Columns(0).ReadOnly = True
         dgvCal.Columns(0).Frozen = True
+        'ライン２
+        dgvCal2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvCal2.Columns.Add("0", "直")
+        For i As Short = 1 To 31
+            dgvCal2.Columns.Add(Str(i), Trim(Str(i)))
+        Next i
+        dgvCal2.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        For i As Integer = 0 To 31
+            dgvCal2.Columns(i).Width = 30
+        Next
+        dgvCal2.RowHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvCal2.RowHeadersVisible = False
+        dgvCal2.Rows.Add("日勤")
+        dgvCal2.Rows.Add("夜勤")
+        dgvCal2.RowHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        dgvCal2.Columns(0).Width = 60
+        dgvCal2.Columns(0).ReadOnly = True
+        dgvCal2.Columns(0).Frozen = True
         DrawCal()
     End Sub
 
@@ -49,6 +68,7 @@
     Public Sub DrawCal()
         Dim kx As Integer
         Dim sx As String
+        'ライン１
         For i As Short = 0 To 1
             For j As Short = 1 To 31
                 kx = CInt(Val(Strings.Mid(frmMain.KinmuData(i + 1), j, 1)))
@@ -63,6 +83,23 @@
                         sx = ""
                 End Select
                 dgvCal.Item(j, i).Value = sx
+            Next
+        Next
+        'ライン２
+        For i As Short = 0 To 1
+            For j As Short = 1 To 31
+                kx = CInt(Val(Strings.Mid(frmMain.KinmuData(i + 3), j, 1)))
+                Select Case kx
+                    Case 1
+                        sx = "A"
+                    Case 2
+                        sx = "B"
+                    Case 3
+                        sx = "C"
+                    Case Else
+                        sx = ""
+                End Select
+                dgvCal2.Item(j, i).Value = sx
             Next
         Next
     End Sub
