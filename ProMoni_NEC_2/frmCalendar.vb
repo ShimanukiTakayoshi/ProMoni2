@@ -43,7 +43,8 @@
     Private Sub btnCalSet_Click(sender As Object, e As EventArgs) Handles btnCalSet.Click
         Dim sx As String
         Dim zx As String
-        Dim KinmuTmp(1) As String
+        Dim KinmuTmp(3) As String
+        'ライン１
         For i As Short = 0 To 1
             For j As Short = 1 To 31
                 zx = CStr(dgvCal.Item(j, i).Value)
@@ -62,6 +63,25 @@
         Next
         frmMain.KinmuData(1) = KinmuTmp(0)
         frmMain.KinmuData(2) = KinmuTmp(1)
+        'ライン２
+        For i As Short = 0 To 1
+            For j As Short = 1 To 31
+                zx = CStr(dgvCal2.Item(j, i).Value)
+                Select Case zx
+                    Case "A", "a"
+                        sx = "1"
+                    Case "B", "b"
+                        sx = "2"
+                    Case "C", "c"
+                        sx = "3"
+                    Case Else
+                        sx = "0"
+                End Select
+                KinmuTmp(i + 2) = KinmuTmp(i + 2) + sx
+            Next
+        Next
+        frmMain.KinmuData(3) = KinmuTmp(2)
+        frmMain.KinmuData(4) = KinmuTmp(3)
         DrawCal()
     End Sub
 

@@ -2516,7 +2516,7 @@
 
     Public Sub LoadKinmu()
         Dim sr As System.IO.StreamReader
-        sr = New System.IO.StreamReader(AppFolder & SystemFolder & "\Kinmu1.txt", System.Text.Encoding.GetEncoding(932))
+        sr = New System.IO.StreamReader(AppFolder & SystemFolder & "\Kinmu.txt", System.Text.Encoding.GetEncoding(932))
         Try
             KinmuData(0) = sr.ReadLine()
             KinmuData(1) = sr.ReadLine()
@@ -2597,9 +2597,9 @@
 
     Public Sub SaveKinmu()
         Try
-            System.IO.File.Delete(AppFolder + "\Kinmu.txt")
+            System.IO.File.Delete(AppFolder & SystemFolder & "\Kinmu.txt")
             Dim sw As System.IO.StreamWriter
-            sw = New System.IO.StreamWriter(AppFolder + "\Kinmu.txt", True, System.Text.Encoding.GetEncoding(932))
+            sw = New System.IO.StreamWriter(AppFolder & SystemFolder & "\Kinmu.txt", True, System.Text.Encoding.GetEncoding(932))
             For i As Short = 0 To 4
                 sw.WriteLine(KinmuData(i))
             Next i
