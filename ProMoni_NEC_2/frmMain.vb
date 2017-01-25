@@ -38,6 +38,17 @@
     Public WtPi(14) As Integer          'ﾜｰｸﾀｲﾑ計算用3
     Public WtBt(14) As Integer          'ﾜｰｸﾀｲﾑ計算用4
 
+    Public WtSh2(7) As Integer           'ﾗｲﾝ停止開始時間(H)
+    Public WtSm2(7) As Integer           'ﾗｲﾝ停止開始時間(M)
+    Public WtEh2(7) As Integer           'ﾗｲﾝ停止時間(H)
+    Public WtEm2(7) As Integer           'ﾗｲﾝ停止時間(M)
+    Public WtLosR2(7) As Integer         'ﾗｲﾝ停止ﾛｽ率
+    Public WtLosTime2(7) As Integer      'ﾗｲﾝ停止実質時間(M)
+    Public WtS2(7) As Integer            'ﾜｰｸﾀｲﾑ計算用1
+    Public WtE2(7) As Integer            'ﾜｰｸﾀｲﾑ計算用2
+    Public WtPi2(14) As Integer          'ﾜｰｸﾀｲﾑ計算用3
+    Public WtBt2(14) As Integer          'ﾜｰｸﾀｲﾑ計算用4
+
     Public Wt1Choku As Integer = 44100     '1直稼動時間(秒)7:45-20:00
     Public Wt2Choku As Integer = 42300     '2直稼動時間(秒)20:00-7:45
     Public Wt1Jisshitu As Integer = 0      '1実質稼働時間(秒) 休憩等の時間を差し引いた時間
@@ -45,8 +56,12 @@
 
     Public Cth As Integer                  '自動ｶｳﾝﾀｸﾘｱ時間(h)
     Public Ctm As Integer                  '自動ｶｳﾝﾀｸﾘｱ時間(m)
+    Public Cth2 As Integer                  '自動ｶｳﾝﾀｸﾘｱ時間(h)
+    Public Ctm2 As Integer                  '自動ｶｳﾝﾀｸﾘｱ時間(m)
     Public Rth As Integer                  '最描写時間(h)
     Public Rtm As Integer                  '最描写時間(m)
+    Public Rth2 As Integer                  '最描写時間(h)
+    Public Rtm2 As Integer                  '最描写時間(m)
 
     Public SvFileName As String = ""       '実績ﾃﾞｰﾀ保存ﾌｧｲﾙ名
     Public SvBkFileName As String = ""     '実績ﾃﾞｰﾀ保存ﾌｧｲﾙ名(ﾊﾞｯｸｱｯﾌﾟ)
@@ -80,6 +95,7 @@
     Public GpChoku2(2) As Integer            '班別可動日数ｶｳﾝﾄ
     Public KinmuData(4) As String           '勤務ｶﾚﾝﾀﾞｰ
     Public Han As Integer = 2               '班編成数
+    Public Han2 As Integer = 2               '班編成数
     Public ProPause As Boolean = False      '2直終了後動作一時停止ﾌﾗｸﾞ
     Public Start1H As Integer               '1直開始(時間)
     Public Start1M As Integer               '1直開始(分)
@@ -87,6 +103,12 @@
     Public Start2M As Integer               '2直開始(分)
     Public End2H As Integer                 '2直終了(時間)
     Public End2M As Integer                 '2直終了(分)
+    Public Start1H2 As Integer               '1直開始(時間)
+    Public Start1M2 As Integer               '1直開始(分)
+    Public Start2H2 As Integer               '2直開始(時間)
+    Public Start2M2 As Integer               '2直開始(分)
+    Public End2H2 As Integer                 '2直終了(時間)
+    Public End2M2 As Integer                 '2直終了(分)
 
     Dim WrPlnA(1, 4) As Integer                '表示用_目標生産数(合計)
     Dim WrPlnB(1, 4) As Integer                '表示用_目標生産数(直)
@@ -2234,6 +2256,7 @@
             Qu(1, 2) = CInt(CSng(sr.ReadLine()))
             Qu(1, 3) = CInt(CSng(sr.ReadLine()))
             Qu(1, 4) = CInt(CSng(sr.ReadLine()))
+            'ライン１
             For i As Short = 1 To 7
                 WtSh(i) = CInt(CSng(sr.ReadLine()))
                 WtSm(i) = CInt(CSng(sr.ReadLine()))
@@ -2249,13 +2272,36 @@
             End2H = CInt(CSng(sr.ReadLine()))
             End2M = CInt(CSng(sr.ReadLine()))
             Han = CInt(sr.ReadLine())
-            sr.Close()
             If Han = 2 Then
                 Cth = End2H : Ctm = End2M
                 Rth = Start2H : Rtm = Start2M
             Else
                 Cth = 7 : Ctm = 45
                 Rth = 20 : Rtm = 0
+            End If
+            'ライン２
+            For i As Short = 1 To 7
+                WtSh2(i) = CInt(CSng(sr.ReadLine()))
+                WtSm2(i) = CInt(CSng(sr.ReadLine()))
+                WtEm2(i) = CInt(CSng(sr.ReadLine()))
+                WtLosR2(i) = CInt(CSng(sr.ReadLine()))
+            Next i
+            Cth2 = CInt(CSng(sr.ReadLine()))
+            Ctm2 = CInt(CSng(sr.ReadLine()))
+            Start1H2 = CInt(CSng(sr.ReadLine()))
+            Start1M2 = CInt(CSng(sr.ReadLine()))
+            Start2H2 = CInt(CSng(sr.ReadLine()))
+            Start2M2 = CInt(CSng(sr.ReadLine()))
+            End2H2 = CInt(CSng(sr.ReadLine()))
+            End2M2 = CInt(CSng(sr.ReadLine()))
+            Han2 = CInt(sr.ReadLine())
+            sr.Close()
+            If Han2 = 2 Then
+                Cth2 = End2H2 : Ctm2 = End2M2
+                Rth2 = Start2H2 : Rtm = Start2M2
+            Else
+                Cth2 = 7 : Ctm2 = 45
+                Rth2 = 20 : Rtm2 = 0
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
