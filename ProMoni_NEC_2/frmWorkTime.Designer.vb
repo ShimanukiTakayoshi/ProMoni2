@@ -168,21 +168,21 @@ Partial Class frmWorkTime
         Me.Label59 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label60 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.rbtn3han2 = New System.Windows.Forms.RadioButton()
+        Me.rbtn2han2 = New System.Windows.Forms.RadioButton()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.nudTm32 = New System.Windows.Forms.NumericUpDown()
+        Me.nudTh32 = New System.Windows.Forms.NumericUpDown()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.Label66 = New System.Windows.Forms.Label()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
+        Me.nudTm22 = New System.Windows.Forms.NumericUpDown()
+        Me.nudTh22 = New System.Windows.Forms.NumericUpDown()
         Me.Label67 = New System.Windows.Forms.Label()
-        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
+        Me.nudTm12 = New System.Windows.Forms.NumericUpDown()
+        Me.nudTh12 = New System.Windows.Forms.NumericUpDown()
         Me.Label68 = New System.Windows.Forms.Label()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.Label70 = New System.Windows.Forms.Label()
@@ -217,26 +217,26 @@ Partial Class frmWorkTime
         Me.Label85 = New System.Windows.Forms.Label()
         Me.Label86 = New System.Windows.Forms.Label()
         Me.Label87 = New System.Windows.Forms.Label()
-        Me.NumericUpDown21 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown22 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm52 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSh52 = New System.Windows.Forms.NumericUpDown()
         Me.Label88 = New System.Windows.Forms.Label()
-        Me.NumericUpDown23 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown24 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm42 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSh42 = New System.Windows.Forms.NumericUpDown()
         Me.Label89 = New System.Windows.Forms.Label()
-        Me.NumericUpDown25 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown26 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm32 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSh32 = New System.Windows.Forms.NumericUpDown()
         Me.Label90 = New System.Windows.Forms.Label()
-        Me.NumericUpDown27 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown28 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm22 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSh22 = New System.Windows.Forms.NumericUpDown()
         Me.Label91 = New System.Windows.Forms.Label()
-        Me.NumericUpDown29 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown30 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm12 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSh12 = New System.Windows.Forms.NumericUpDown()
         Me.Label92 = New System.Windows.Forms.Label()
-        Me.NumericUpDown31 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown32 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm72 = New System.Windows.Forms.NumericUpDown()
+        Me.nudsh72 = New System.Windows.Forms.NumericUpDown()
         Me.Label93 = New System.Windows.Forms.Label()
-        Me.NumericUpDown33 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown34 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSm62 = New System.Windows.Forms.NumericUpDown()
+        Me.nudSh62 = New System.Windows.Forms.NumericUpDown()
         Me.Label94 = New System.Windows.Forms.Label()
         Me.Label95 = New System.Windows.Forms.Label()
         Me.Label96 = New System.Windows.Forms.Label()
@@ -303,12 +303,12 @@ Partial Class frmWorkTime
         CType(Me.nudTh3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTm32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTh32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTm22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTh22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTm12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTh12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -323,20 +323,20 @@ Partial Class frmWorkTime
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm52, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSh52, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSh42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSh32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSh22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSh12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm72, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudsh72, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSm62, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudSh62, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt2ProEndM
@@ -1982,21 +1982,21 @@ Partial Class frmWorkTime
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.YellowGreen
         Me.GroupBox2.Controls.Add(Me.Label60)
-        Me.GroupBox2.Controls.Add(Me.RadioButton1)
-        Me.GroupBox2.Controls.Add(Me.RadioButton2)
+        Me.GroupBox2.Controls.Add(Me.rbtn3han2)
+        Me.GroupBox2.Controls.Add(Me.rbtn2han2)
         Me.GroupBox2.Controls.Add(Me.Label61)
         Me.GroupBox2.Controls.Add(Me.Label62)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown1)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown2)
+        Me.GroupBox2.Controls.Add(Me.nudTm32)
+        Me.GroupBox2.Controls.Add(Me.nudTh32)
         Me.GroupBox2.Controls.Add(Me.Label63)
         Me.GroupBox2.Controls.Add(Me.Label64)
         Me.GroupBox2.Controls.Add(Me.Label65)
         Me.GroupBox2.Controls.Add(Me.Label66)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown3)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown4)
+        Me.GroupBox2.Controls.Add(Me.nudTm22)
+        Me.GroupBox2.Controls.Add(Me.nudTh22)
         Me.GroupBox2.Controls.Add(Me.Label67)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown5)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown6)
+        Me.GroupBox2.Controls.Add(Me.nudTm12)
+        Me.GroupBox2.Controls.Add(Me.nudTh12)
         Me.GroupBox2.Controls.Add(Me.Label68)
         Me.GroupBox2.Controls.Add(Me.Label69)
         Me.GroupBox2.Controls.Add(Me.Label70)
@@ -2031,26 +2031,26 @@ Partial Class frmWorkTime
         Me.GroupBox2.Controls.Add(Me.Label85)
         Me.GroupBox2.Controls.Add(Me.Label86)
         Me.GroupBox2.Controls.Add(Me.Label87)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown21)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown22)
+        Me.GroupBox2.Controls.Add(Me.nudSm52)
+        Me.GroupBox2.Controls.Add(Me.nudSh52)
         Me.GroupBox2.Controls.Add(Me.Label88)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown23)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown24)
+        Me.GroupBox2.Controls.Add(Me.nudSm42)
+        Me.GroupBox2.Controls.Add(Me.nudSh42)
         Me.GroupBox2.Controls.Add(Me.Label89)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown25)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown26)
+        Me.GroupBox2.Controls.Add(Me.nudSm32)
+        Me.GroupBox2.Controls.Add(Me.nudSh32)
         Me.GroupBox2.Controls.Add(Me.Label90)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown27)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown28)
+        Me.GroupBox2.Controls.Add(Me.nudSm22)
+        Me.GroupBox2.Controls.Add(Me.nudSh22)
         Me.GroupBox2.Controls.Add(Me.Label91)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown29)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown30)
+        Me.GroupBox2.Controls.Add(Me.nudSm12)
+        Me.GroupBox2.Controls.Add(Me.nudSh12)
         Me.GroupBox2.Controls.Add(Me.Label92)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown31)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown32)
+        Me.GroupBox2.Controls.Add(Me.nudSm72)
+        Me.GroupBox2.Controls.Add(Me.nudsh72)
         Me.GroupBox2.Controls.Add(Me.Label93)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown33)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown34)
+        Me.GroupBox2.Controls.Add(Me.nudSm62)
+        Me.GroupBox2.Controls.Add(Me.nudSh62)
         Me.GroupBox2.Controls.Add(Me.Label94)
         Me.GroupBox2.Controls.Add(Me.Label95)
         Me.GroupBox2.Controls.Add(Me.Label96)
@@ -2077,29 +2077,29 @@ Partial Class frmWorkTime
         Me.Label60.TabIndex = 157
         Me.Label60.Text = "1直終了･2直開始"
         '
-        'RadioButton1
+        'rbtn3han2
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("MS UI Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(247, 74)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(81, 37)
-        Me.RadioButton1.TabIndex = 172
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "3班"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.rbtn3han2.AutoSize = True
+        Me.rbtn3han2.Font = New System.Drawing.Font("MS UI Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.rbtn3han2.Location = New System.Drawing.Point(247, 74)
+        Me.rbtn3han2.Name = "rbtn3han2"
+        Me.rbtn3han2.Size = New System.Drawing.Size(81, 37)
+        Me.rbtn3han2.TabIndex = 172
+        Me.rbtn3han2.TabStop = True
+        Me.rbtn3han2.Text = "3班"
+        Me.rbtn3han2.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'rbtn2han2
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Font = New System.Drawing.Font("MS UI Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.RadioButton2.Location = New System.Drawing.Point(247, 39)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(81, 37)
-        Me.RadioButton2.TabIndex = 171
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "2班"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.rbtn2han2.AutoSize = True
+        Me.rbtn2han2.Font = New System.Drawing.Font("MS UI Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.rbtn2han2.Location = New System.Drawing.Point(247, 39)
+        Me.rbtn2han2.Name = "rbtn2han2"
+        Me.rbtn2han2.Size = New System.Drawing.Size(81, 37)
+        Me.rbtn2han2.TabIndex = 171
+        Me.rbtn2han2.TabStop = True
+        Me.rbtn2han2.Text = "2班"
+        Me.rbtn2han2.UseVisualStyleBackColor = True
         '
         'Label61
         '
@@ -2122,30 +2122,30 @@ Partial Class frmWorkTime
         Me.Label62.TabIndex = 169
         Me.Label62.Text = ":"
         '
-        'NumericUpDown1
+        'nudTm32
         '
-        Me.NumericUpDown1.CausesValidation = False
-        Me.NumericUpDown1.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown1.Location = New System.Drawing.Point(288, 227)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.ReadOnly = True
-        Me.NumericUpDown1.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown1.TabIndex = 168
-        Me.NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudTm32.CausesValidation = False
+        Me.nudTm32.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudTm32.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudTm32.Location = New System.Drawing.Point(288, 227)
+        Me.nudTm32.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudTm32.Name = "nudTm32"
+        Me.nudTm32.ReadOnly = True
+        Me.nudTm32.Size = New System.Drawing.Size(58, 28)
+        Me.nudTm32.TabIndex = 168
+        Me.nudTm32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown2
+        'nudTh32
         '
-        Me.NumericUpDown2.CausesValidation = False
-        Me.NumericUpDown2.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown2.Location = New System.Drawing.Point(205, 227)
-        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.ReadOnly = True
-        Me.NumericUpDown2.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown2.TabIndex = 167
-        Me.NumericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudTh32.CausesValidation = False
+        Me.nudTh32.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudTh32.Location = New System.Drawing.Point(205, 227)
+        Me.nudTh32.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudTh32.Name = "nudTh32"
+        Me.nudTh32.ReadOnly = True
+        Me.nudTh32.Size = New System.Drawing.Size(58, 28)
+        Me.nudTh32.TabIndex = 167
+        Me.nudTh32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label63
         '
@@ -2189,30 +2189,30 @@ Partial Class frmWorkTime
         Me.Label66.TabIndex = 163
         Me.Label66.Text = ":"
         '
-        'NumericUpDown3
+        'nudTm22
         '
-        Me.NumericUpDown3.CausesValidation = False
-        Me.NumericUpDown3.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown3.Location = New System.Drawing.Point(288, 195)
-        Me.NumericUpDown3.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.ReadOnly = True
-        Me.NumericUpDown3.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown3.TabIndex = 162
-        Me.NumericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudTm22.CausesValidation = False
+        Me.nudTm22.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudTm22.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudTm22.Location = New System.Drawing.Point(288, 195)
+        Me.nudTm22.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudTm22.Name = "nudTm22"
+        Me.nudTm22.ReadOnly = True
+        Me.nudTm22.Size = New System.Drawing.Size(58, 28)
+        Me.nudTm22.TabIndex = 162
+        Me.nudTm22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown4
+        'nudTh22
         '
-        Me.NumericUpDown4.CausesValidation = False
-        Me.NumericUpDown4.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown4.Location = New System.Drawing.Point(204, 195)
-        Me.NumericUpDown4.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.ReadOnly = True
-        Me.NumericUpDown4.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown4.TabIndex = 161
-        Me.NumericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudTh22.CausesValidation = False
+        Me.nudTh22.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudTh22.Location = New System.Drawing.Point(204, 195)
+        Me.nudTh22.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudTh22.Name = "nudTh22"
+        Me.nudTh22.ReadOnly = True
+        Me.nudTh22.Size = New System.Drawing.Size(58, 28)
+        Me.nudTh22.TabIndex = 161
+        Me.nudTh22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label67
         '
@@ -2224,30 +2224,30 @@ Partial Class frmWorkTime
         Me.Label67.TabIndex = 160
         Me.Label67.Text = ":"
         '
-        'NumericUpDown5
+        'nudTm12
         '
-        Me.NumericUpDown5.CausesValidation = False
-        Me.NumericUpDown5.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown5.Location = New System.Drawing.Point(287, 163)
-        Me.NumericUpDown5.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.ReadOnly = True
-        Me.NumericUpDown5.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown5.TabIndex = 159
-        Me.NumericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudTm12.CausesValidation = False
+        Me.nudTm12.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudTm12.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudTm12.Location = New System.Drawing.Point(287, 163)
+        Me.nudTm12.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudTm12.Name = "nudTm12"
+        Me.nudTm12.ReadOnly = True
+        Me.nudTm12.Size = New System.Drawing.Size(58, 28)
+        Me.nudTm12.TabIndex = 159
+        Me.nudTm12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown6
+        'nudTh12
         '
-        Me.NumericUpDown6.CausesValidation = False
-        Me.NumericUpDown6.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown6.Location = New System.Drawing.Point(204, 163)
-        Me.NumericUpDown6.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown6.Name = "NumericUpDown6"
-        Me.NumericUpDown6.ReadOnly = True
-        Me.NumericUpDown6.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown6.TabIndex = 158
-        Me.NumericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudTh12.CausesValidation = False
+        Me.nudTh12.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudTh12.Location = New System.Drawing.Point(204, 163)
+        Me.nudTh12.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudTh12.Name = "nudTh12"
+        Me.nudTh12.ReadOnly = True
+        Me.nudTh12.Size = New System.Drawing.Size(58, 28)
+        Me.nudTh12.TabIndex = 158
+        Me.nudTh12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label68
         '
@@ -2628,30 +2628,30 @@ Partial Class frmWorkTime
         Me.Label87.TabIndex = 101
         Me.Label87.Text = ":"
         '
-        'NumericUpDown21
+        'nudSm52
         '
-        Me.NumericUpDown21.CausesValidation = False
-        Me.NumericUpDown21.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown21.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown21.Location = New System.Drawing.Point(617, 164)
-        Me.NumericUpDown21.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown21.Name = "NumericUpDown21"
-        Me.NumericUpDown21.ReadOnly = True
-        Me.NumericUpDown21.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown21.TabIndex = 100
-        Me.NumericUpDown21.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm52.CausesValidation = False
+        Me.nudSm52.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm52.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm52.Location = New System.Drawing.Point(617, 164)
+        Me.nudSm52.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm52.Name = "nudSm52"
+        Me.nudSm52.ReadOnly = True
+        Me.nudSm52.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm52.TabIndex = 100
+        Me.nudSm52.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown22
+        'nudSh52
         '
-        Me.NumericUpDown22.CausesValidation = False
-        Me.NumericUpDown22.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown22.Location = New System.Drawing.Point(536, 164)
-        Me.NumericUpDown22.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown22.Name = "NumericUpDown22"
-        Me.NumericUpDown22.ReadOnly = True
-        Me.NumericUpDown22.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown22.TabIndex = 99
-        Me.NumericUpDown22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSh52.CausesValidation = False
+        Me.nudSh52.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSh52.Location = New System.Drawing.Point(536, 164)
+        Me.nudSh52.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudSh52.Name = "nudSh52"
+        Me.nudSh52.ReadOnly = True
+        Me.nudSh52.Size = New System.Drawing.Size(58, 28)
+        Me.nudSh52.TabIndex = 99
+        Me.nudSh52.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label88
         '
@@ -2663,30 +2663,30 @@ Partial Class frmWorkTime
         Me.Label88.TabIndex = 98
         Me.Label88.Text = ":"
         '
-        'NumericUpDown23
+        'nudSm42
         '
-        Me.NumericUpDown23.CausesValidation = False
-        Me.NumericUpDown23.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown23.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown23.Location = New System.Drawing.Point(617, 132)
-        Me.NumericUpDown23.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown23.Name = "NumericUpDown23"
-        Me.NumericUpDown23.ReadOnly = True
-        Me.NumericUpDown23.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown23.TabIndex = 97
-        Me.NumericUpDown23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm42.CausesValidation = False
+        Me.nudSm42.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm42.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm42.Location = New System.Drawing.Point(617, 132)
+        Me.nudSm42.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm42.Name = "nudSm42"
+        Me.nudSm42.ReadOnly = True
+        Me.nudSm42.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm42.TabIndex = 97
+        Me.nudSm42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown24
+        'nudSh42
         '
-        Me.NumericUpDown24.CausesValidation = False
-        Me.NumericUpDown24.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown24.Location = New System.Drawing.Point(536, 132)
-        Me.NumericUpDown24.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown24.Name = "NumericUpDown24"
-        Me.NumericUpDown24.ReadOnly = True
-        Me.NumericUpDown24.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown24.TabIndex = 96
-        Me.NumericUpDown24.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSh42.CausesValidation = False
+        Me.nudSh42.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSh42.Location = New System.Drawing.Point(536, 132)
+        Me.nudSh42.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudSh42.Name = "nudSh42"
+        Me.nudSh42.ReadOnly = True
+        Me.nudSh42.Size = New System.Drawing.Size(58, 28)
+        Me.nudSh42.TabIndex = 96
+        Me.nudSh42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label89
         '
@@ -2698,30 +2698,30 @@ Partial Class frmWorkTime
         Me.Label89.TabIndex = 95
         Me.Label89.Text = ":"
         '
-        'NumericUpDown25
+        'nudSm32
         '
-        Me.NumericUpDown25.CausesValidation = False
-        Me.NumericUpDown25.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown25.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown25.Location = New System.Drawing.Point(617, 100)
-        Me.NumericUpDown25.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown25.Name = "NumericUpDown25"
-        Me.NumericUpDown25.ReadOnly = True
-        Me.NumericUpDown25.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown25.TabIndex = 94
-        Me.NumericUpDown25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm32.CausesValidation = False
+        Me.nudSm32.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm32.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm32.Location = New System.Drawing.Point(617, 100)
+        Me.nudSm32.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm32.Name = "nudSm32"
+        Me.nudSm32.ReadOnly = True
+        Me.nudSm32.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm32.TabIndex = 94
+        Me.nudSm32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown26
+        'nudSh32
         '
-        Me.NumericUpDown26.CausesValidation = False
-        Me.NumericUpDown26.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown26.Location = New System.Drawing.Point(536, 100)
-        Me.NumericUpDown26.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown26.Name = "NumericUpDown26"
-        Me.NumericUpDown26.ReadOnly = True
-        Me.NumericUpDown26.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown26.TabIndex = 93
-        Me.NumericUpDown26.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSh32.CausesValidation = False
+        Me.nudSh32.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSh32.Location = New System.Drawing.Point(536, 100)
+        Me.nudSh32.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudSh32.Name = "nudSh32"
+        Me.nudSh32.ReadOnly = True
+        Me.nudSh32.Size = New System.Drawing.Size(58, 28)
+        Me.nudSh32.TabIndex = 93
+        Me.nudSh32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label90
         '
@@ -2733,30 +2733,30 @@ Partial Class frmWorkTime
         Me.Label90.TabIndex = 92
         Me.Label90.Text = ":"
         '
-        'NumericUpDown27
+        'nudSm22
         '
-        Me.NumericUpDown27.CausesValidation = False
-        Me.NumericUpDown27.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown27.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown27.Location = New System.Drawing.Point(617, 68)
-        Me.NumericUpDown27.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown27.Name = "NumericUpDown27"
-        Me.NumericUpDown27.ReadOnly = True
-        Me.NumericUpDown27.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown27.TabIndex = 91
-        Me.NumericUpDown27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm22.CausesValidation = False
+        Me.nudSm22.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm22.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm22.Location = New System.Drawing.Point(617, 68)
+        Me.nudSm22.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm22.Name = "nudSm22"
+        Me.nudSm22.ReadOnly = True
+        Me.nudSm22.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm22.TabIndex = 91
+        Me.nudSm22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown28
+        'nudSh22
         '
-        Me.NumericUpDown28.CausesValidation = False
-        Me.NumericUpDown28.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown28.Location = New System.Drawing.Point(536, 68)
-        Me.NumericUpDown28.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown28.Name = "NumericUpDown28"
-        Me.NumericUpDown28.ReadOnly = True
-        Me.NumericUpDown28.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown28.TabIndex = 90
-        Me.NumericUpDown28.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSh22.CausesValidation = False
+        Me.nudSh22.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSh22.Location = New System.Drawing.Point(536, 68)
+        Me.nudSh22.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudSh22.Name = "nudSh22"
+        Me.nudSh22.ReadOnly = True
+        Me.nudSh22.Size = New System.Drawing.Size(58, 28)
+        Me.nudSh22.TabIndex = 90
+        Me.nudSh22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label91
         '
@@ -2768,30 +2768,30 @@ Partial Class frmWorkTime
         Me.Label91.TabIndex = 89
         Me.Label91.Text = ":"
         '
-        'NumericUpDown29
+        'nudSm12
         '
-        Me.NumericUpDown29.CausesValidation = False
-        Me.NumericUpDown29.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown29.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown29.Location = New System.Drawing.Point(617, 36)
-        Me.NumericUpDown29.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown29.Name = "NumericUpDown29"
-        Me.NumericUpDown29.ReadOnly = True
-        Me.NumericUpDown29.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown29.TabIndex = 88
-        Me.NumericUpDown29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm12.CausesValidation = False
+        Me.nudSm12.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm12.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm12.Location = New System.Drawing.Point(617, 36)
+        Me.nudSm12.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm12.Name = "nudSm12"
+        Me.nudSm12.ReadOnly = True
+        Me.nudSm12.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm12.TabIndex = 88
+        Me.nudSm12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown30
+        'nudSh12
         '
-        Me.NumericUpDown30.CausesValidation = False
-        Me.NumericUpDown30.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown30.Location = New System.Drawing.Point(536, 36)
-        Me.NumericUpDown30.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown30.Name = "NumericUpDown30"
-        Me.NumericUpDown30.ReadOnly = True
-        Me.NumericUpDown30.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown30.TabIndex = 87
-        Me.NumericUpDown30.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSh12.CausesValidation = False
+        Me.nudSh12.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSh12.Location = New System.Drawing.Point(536, 36)
+        Me.nudSh12.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudSh12.Name = "nudSh12"
+        Me.nudSh12.ReadOnly = True
+        Me.nudSh12.Size = New System.Drawing.Size(58, 28)
+        Me.nudSh12.TabIndex = 87
+        Me.nudSh12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label92
         '
@@ -2803,30 +2803,30 @@ Partial Class frmWorkTime
         Me.Label92.TabIndex = 86
         Me.Label92.Text = ":"
         '
-        'NumericUpDown31
+        'nudSm72
         '
-        Me.NumericUpDown31.CausesValidation = False
-        Me.NumericUpDown31.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown31.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown31.Location = New System.Drawing.Point(617, 228)
-        Me.NumericUpDown31.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown31.Name = "NumericUpDown31"
-        Me.NumericUpDown31.ReadOnly = True
-        Me.NumericUpDown31.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown31.TabIndex = 85
-        Me.NumericUpDown31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm72.CausesValidation = False
+        Me.nudSm72.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm72.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm72.Location = New System.Drawing.Point(617, 228)
+        Me.nudSm72.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm72.Name = "nudSm72"
+        Me.nudSm72.ReadOnly = True
+        Me.nudSm72.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm72.TabIndex = 85
+        Me.nudSm72.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown32
+        'nudsh72
         '
-        Me.NumericUpDown32.CausesValidation = False
-        Me.NumericUpDown32.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown32.Location = New System.Drawing.Point(536, 228)
-        Me.NumericUpDown32.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown32.Name = "NumericUpDown32"
-        Me.NumericUpDown32.ReadOnly = True
-        Me.NumericUpDown32.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown32.TabIndex = 84
-        Me.NumericUpDown32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudsh72.CausesValidation = False
+        Me.nudsh72.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudsh72.Location = New System.Drawing.Point(536, 228)
+        Me.nudsh72.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudsh72.Name = "nudsh72"
+        Me.nudsh72.ReadOnly = True
+        Me.nudsh72.Size = New System.Drawing.Size(58, 28)
+        Me.nudsh72.TabIndex = 84
+        Me.nudsh72.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label93
         '
@@ -2838,30 +2838,30 @@ Partial Class frmWorkTime
         Me.Label93.TabIndex = 83
         Me.Label93.Text = ":"
         '
-        'NumericUpDown33
+        'nudSm62
         '
-        Me.NumericUpDown33.CausesValidation = False
-        Me.NumericUpDown33.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown33.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.NumericUpDown33.Location = New System.Drawing.Point(617, 196)
-        Me.NumericUpDown33.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
-        Me.NumericUpDown33.Name = "NumericUpDown33"
-        Me.NumericUpDown33.ReadOnly = True
-        Me.NumericUpDown33.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown33.TabIndex = 82
-        Me.NumericUpDown33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSm62.CausesValidation = False
+        Me.nudSm62.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSm62.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.nudSm62.Location = New System.Drawing.Point(617, 196)
+        Me.nudSm62.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
+        Me.nudSm62.Name = "nudSm62"
+        Me.nudSm62.ReadOnly = True
+        Me.nudSm62.Size = New System.Drawing.Size(58, 28)
+        Me.nudSm62.TabIndex = 82
+        Me.nudSm62.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'NumericUpDown34
+        'nudSh62
         '
-        Me.NumericUpDown34.CausesValidation = False
-        Me.NumericUpDown34.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.NumericUpDown34.Location = New System.Drawing.Point(536, 196)
-        Me.NumericUpDown34.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
-        Me.NumericUpDown34.Name = "NumericUpDown34"
-        Me.NumericUpDown34.ReadOnly = True
-        Me.NumericUpDown34.Size = New System.Drawing.Size(58, 28)
-        Me.NumericUpDown34.TabIndex = 81
-        Me.NumericUpDown34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.nudSh62.CausesValidation = False
+        Me.nudSh62.Font = New System.Drawing.Font("ＭＳ ゴシック", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.nudSh62.Location = New System.Drawing.Point(536, 196)
+        Me.nudSh62.Maximum = New Decimal(New Integer() {33, 0, 0, 0})
+        Me.nudSh62.Name = "nudSh62"
+        Me.nudSh62.ReadOnly = True
+        Me.nudSh62.Size = New System.Drawing.Size(58, 28)
+        Me.nudSh62.TabIndex = 81
+        Me.nudSh62.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label94
         '
@@ -3070,12 +3070,12 @@ Partial Class frmWorkTime
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTm32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTh32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTm22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTh22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTm12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTh12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3090,20 +3090,20 @@ Partial Class frmWorkTime
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm52, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSh52, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSh42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSh32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSh22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSh12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm72, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudsh72, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSm62, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudSh62, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3254,21 +3254,21 @@ Partial Class frmWorkTime
     Friend WithEvents Label59 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label60 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtn3han2 As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtn2han2 As System.Windows.Forms.RadioButton
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents Label62 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown2 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTm32 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTh32 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label63 As System.Windows.Forms.Label
     Friend WithEvents Label64 As System.Windows.Forms.Label
     Friend WithEvents Label65 As System.Windows.Forms.Label
     Friend WithEvents Label66 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown3 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown4 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTm22 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTh22 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label67 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown5 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown6 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTm12 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudTh12 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label68 As System.Windows.Forms.Label
     Friend WithEvents Label69 As System.Windows.Forms.Label
     Friend WithEvents Label70 As System.Windows.Forms.Label
@@ -3303,26 +3303,26 @@ Partial Class frmWorkTime
     Friend WithEvents Label85 As System.Windows.Forms.Label
     Friend WithEvents Label86 As System.Windows.Forms.Label
     Friend WithEvents Label87 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown21 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown22 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm52 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSh52 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label88 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown23 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown24 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm42 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSh42 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label89 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown25 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown26 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm32 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSh32 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label90 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown27 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown28 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm22 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSh22 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label91 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown29 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown30 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm12 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSh12 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label92 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown31 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown32 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm72 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudsh72 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label93 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown33 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown34 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSm62 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudSh62 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label94 As System.Windows.Forms.Label
     Friend WithEvents Label95 As System.Windows.Forms.Label
     Friend WithEvents Label96 As System.Windows.Forms.Label
