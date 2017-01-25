@@ -3,8 +3,12 @@
     Dim WtSetNGFlag As Boolean = False
 
     Private Sub frmWorkTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim x As Integer = frmMain.WtSh2(1)
+
+        x = x
         WtFirstFlag = True
         WtSetNGFlag = False
+        'ライン１
         nudSh1.Value = frmMain.WtSh(1)
         nudSh2.Value = frmMain.WtSh(2)
         nudSh3.Value = frmMain.WtSh(3)
@@ -45,55 +49,77 @@
         lblStopTimeJ6.Text = Str(frmMain.WtLosTime(6))
         lblStopTimeJ7.Text = Str(frmMain.WtLosTime(7))
 
-        'txt1ProStartH.Text = "" 'Str(frmMain.Wt1ProStartH)
-        'txt1ProStartM.Text = "" 'Str(frmMain.Wt1ProStartM)
-        'txt1BrkStartH.Text = "" 'Str(frmMain.Wt1BrkStartH)
-        'txt1BrkStartM.Text = "" 'Str(frmMain.Wt1BrkStartM)
-        'txt1BrkEndH.Text = "" 'Str(frmMain.Wt1BrkEndH)
-        'txt1BrkEndM.Text = "" 'Str(frmMain.Wt1BrkEndM)
-        'txt1ProEndH.Text = "" 'Str(frmMain.Wt1ProEndH)
-        'txt1ProEndM.Text = "" 'Str(frmMain.Wt1ProEndM)
-        'txt2ProStartH.Text = "" 'Str(frmMain.Wt2ProStartH)
-        'txt2ProStartM.Text = "" 'Str(frmMain.Wt2ProStartM)
-        'txt2BrkStartH.Text = "" 'Str(frmMain.Wt2BrkStartH)
-        'txt2BrkStartM.Text = "" 'Str(frmMain.Wt2BrkStartM)
-        'txt2BrkEndH.Text = "" 'Str(frmMain.Wt2BrkEndH)
-        'txt2BrkEndM.Text = "" 'Str(frmMain.Wt2BrkEndM)
-        'txt2ProEndH.Text = "" 'Str(frmMain.Wt2ProEndH)
-        'txt2ProEndM.Text = "" 'Str(frmMain.Wt2ProEndM)
-        '
         nudTh1.Value = frmMain.Start1H
         nudTh2.Value = frmMain.Start2H
         nudTh3.Value = frmMain.End2H
         nudTm1.Value = frmMain.Start1M
         nudTm2.Value = frmMain.Start2M
         nudTm3.Value = frmMain.End2M
+
+        'ライン２
+        nudSh12.Value = frmMain.WtSh2(1)
+        nudSh22.Value = frmMain.WtSh2(2)
+        nudSh32.Value = frmMain.WtSh2(3)
+        nudSh42.Value = frmMain.WtSh2(4)
+        nudSh52.Value = frmMain.WtSh2(5)
+        nudSh62.Value = frmMain.WtSh2(6)
+        nudsh72.Value = frmMain.WtSh2(7)
+
+        nudSm12.Value = frmMain.WtSm2(1)
+        nudSm22.Value = frmMain.WtSm2(2)
+        nudSm32.Value = frmMain.WtSm2(3)
+        nudSm42.Value = frmMain.WtSm2(4)
+        nudSm52.Value = frmMain.WtSm2(5)
+        nudSm62.Value = frmMain.WtSm2(6)
+        nudSm72.Value = frmMain.WtSm2(7)
+
+        nudEm12.Value = frmMain.WtEm2(1)
+        nudEm22.Value = frmMain.WtEm2(2)
+        nudEm32.Value = frmMain.WtEm2(3)
+        nudEm42.Value = frmMain.WtEm2(4)
+        nudEm52.Value = frmMain.WtEm2(5)
+        nudEm62.Value = frmMain.WtEm2(6)
+        nudEm72.Value = frmMain.WtEm2(7)
+
+        nudLoss12.Value = frmMain.WtLosR2(1)
+        nudLoss22.Value = frmMain.WtLosR2(2)
+        nudLoss32.Value = frmMain.WtLosR2(3)
+        nudLoss42.Value = frmMain.WtLosR2(4)
+        nudLoss52.Value = frmMain.WtLosR2(5)
+        nudLoss62.Value = frmMain.WtLosR2(6)
+        nudLoss72.Value = frmMain.WtLosR2(7)
+
+        lblStopTimeJ12.Text = Str(frmMain.WtLosTime2(1))
+        lblStopTimeJ22.Text = Str(frmMain.WtLosTime2(2))
+        lblStopTimeJ32.Text = Str(frmMain.WtLosTime2(3))
+        lblStopTimeJ42.Text = Str(frmMain.WtLosTime2(4))
+        lblStopTimeJ52.Text = Str(frmMain.WtLosTime2(5))
+        lblStopTimeJ62.Text = Str(frmMain.WtLosTime2(6))
+        lblStopTimeJ72.Text = Str(frmMain.WtLosTime2(7))
+
+        nudTh12.Value = frmMain.Start1H2
+        nudTh22.Value = frmMain.Start2H2
+        nudTh32.Value = frmMain.End2H2
+        nudTm12.Value = frmMain.Start1M2
+        nudTm22.Value = frmMain.Start2M2
+        nudTm32.Value = frmMain.End2M2
+
+        'ライン１
         Select Case frmMain.Han
             Case 2
                 rbtn2han.Checked = True
             Case Else
                 rbtn3han.Checked = True
         End Select
-
-        'nudWt1psh.Value = frmMain.Wt1ProStartH
-        'nudWt1psm.Value = frmMain.Wt1ProStartM
-        'nudWt1bsh.Value = frmMain.Wt1BrkStartH
-        'nudWt1bsm.Value = frmMain.Wt1BrkStartM
-        'nudWt1beh.Value = frmMain.Wt1BrkEndH
-        'nudWt1bem.Value = frmMain.Wt1BrkEndM
-        'nudWt1peh.Value = frmMain.Wt1ProEndH
-        'nudWt1pem.Value = frmMain.Wt1ProEndM
-        'nudWt2psh.Value = frmMain.Wt2ProStartH
-        'nudWt2psm.Value = frmMain.Wt2ProStartM
-        'nudWt2bsh.Value = frmMain.Wt2BrkStartH
-        'nudWt2bsm.Value = frmMain.Wt2BrkStartM
-        'nudWt2beh.Value = frmMain.Wt2BrkEndH
-        'nudWt2bem.Value = frmMain.Wt2BrkEndM
-        'nudWt2peh.Value = frmMain.Wt2ProEndH
-        'nudWt2pem.Value = frmMain.Wt2ProEndM
+        'ライン２
+        Select Case frmMain.Han2
+            Case 2
+                rbtn2han2.Checked = True
+            Case Else
+                rbtn3han2.Checked = True
+        End Select
 
         ReDraw()
-
         nudPropertySetting()
         WtFirstFlag = False
     End Sub
@@ -220,6 +246,7 @@
     End Sub
 
     Public Sub ReDraw()
+        'ライン１
         frmMain.WtSh(1) = CInt(nudSh1.Value)
         frmMain.WtSh(2) = CInt(nudSh2.Value)
         frmMain.WtSh(3) = CInt(nudSh3.Value)
@@ -324,6 +351,113 @@
                 frmMain.Ctm = 45
                 frmMain.Rth = 20
                 frmMain.Rtm = 0
+        End Select
+
+        'ライン２
+        frmMain.WtSh2(1) = CInt(nudSh12.Value)
+        frmMain.WtSh2(2) = CInt(nudSh22.Value)
+        frmMain.WtSh2(3) = CInt(nudSh32.Value)
+        frmMain.WtSh2(4) = CInt(nudSh42.Value)
+        frmMain.WtSh2(5) = CInt(nudSh52.Value)
+        frmMain.WtSh2(6) = CInt(nudSh62.Value)
+        frmMain.WtSh2(7) = CInt(nudsh72.Value)
+        frmMain.WtSm2(1) = CInt(nudSm12.Value)
+        frmMain.WtSm2(2) = CInt(nudSm22.Value)
+        frmMain.WtSm2(3) = CInt(nudSm32.Value)
+        frmMain.WtSm2(4) = CInt(nudSm42.Value)
+        frmMain.WtSm2(5) = CInt(nudSm52.Value)
+        frmMain.WtSm2(6) = CInt(nudSm62.Value)
+        frmMain.WtSm2(7) = CInt(nudSm72.Value)
+        frmMain.WtEm2(1) = CInt(nudEm12.Value)
+        frmMain.WtEm2(2) = CInt(nudEm22.Value)
+        frmMain.WtEm2(3) = CInt(nudEm32.Value)
+        frmMain.WtEm2(4) = CInt(nudEm42.Value)
+        frmMain.WtEm2(5) = CInt(nudEm52.Value)
+        frmMain.WtEm2(6) = CInt(nudEm62.Value)
+        frmMain.WtEm2(7) = CInt(nudEm72.Value)
+        frmMain.WtLosR2(1) = CInt(nudLoss12.Value)
+        frmMain.WtLosR2(2) = CInt(nudLoss22.Value)
+        frmMain.WtLosR2(3) = CInt(nudLoss32.Value)
+        frmMain.WtLosR2(4) = CInt(nudLoss42.Value)
+        frmMain.WtLosR2(5) = CInt(nudLoss52.Value)
+        frmMain.WtLosR2(6) = CInt(nudLoss62.Value)
+        frmMain.WtLosR2(7) = CInt(nudLoss72.Value)
+
+        frmMain.Start1H2 = CInt(nudTh12.Value)
+        frmMain.Start2H2 = CInt(nudTh22.Value)
+        frmMain.End2H2 = CInt(nudTh32.Value)
+        frmMain.Start1M2 = CInt(nudTm12.Value)
+        frmMain.Start2M2 = CInt(nudTm22.Value)
+        frmMain.End2M2 = CInt(nudTm32.Value)
+
+        For i As Short = 1 To 7
+            frmMain.WtLosTime2(i) = CInt(frmMain.WtEm2(i) * (frmMain.WtLosR2(i) / 100))
+        Next
+        lblStopTimeJ12.Text = Str(frmMain.WtLosTime2(1))
+        lblStopTimeJ22.Text = Str(frmMain.WtLosTime2(2))
+        lblStopTimeJ32.Text = Str(frmMain.WtLosTime2(3))
+        lblStopTimeJ42.Text = Str(frmMain.WtLosTime2(4))
+        lblStopTimeJ52.Text = Str(frmMain.WtLosTime2(5))
+        lblStopTimeJ62.Text = Str(frmMain.WtLosTime2(6))
+        lblStopTimeJ72.Text = Str(frmMain.WtLosTime2(7))
+
+        Select Case frmMain.Han2
+            Case 2
+                Label60.Visible = True
+                Label62.Visible = True
+                Label63.Visible = True
+                Label64.Visible = True
+                Label65.Visible = True
+                Label66.Visible = True
+                Label67.Visible = True
+                Label68.Visible = True
+                nudTh12.Visible = True
+                nudTh22.Visible = True
+                nudTh32.Visible = True
+                nudTm12.Visible = True
+                nudTm22.Visible = True
+                nudTm32.Visible = True
+                Label99.Visible = False
+                Label92.Visible = False
+                Label85.Visible = False
+                lblStopTimeJ72.Visible = False
+                nudsh72.Visible = False
+                nudSm72.Visible = False
+                nudEm72.Visible = False
+                nudLoss72.Visible = False
+                Label97.Text = "1直休憩"
+                frmMain.Cth2 = CInt(CLng(frmMain.End2H2))
+                frmMain.Ctm2 = CInt(CLng(frmMain.End2M2))
+                frmMain.Rth2 = CInt(CLng(frmMain.Start2H2))
+                frmMain.Rtm2 = CInt(CLng(frmMain.Start2M2))
+            Case Else
+                Label60.Visible = False
+                Label62.Visible = False
+                Label63.Visible = False
+                Label64.Visible = False
+                Label65.Visible = False
+                Label66.Visible = False
+                Label67.Visible = False
+                Label68.Visible = False
+                nudTh12.Visible = False
+                nudTh22.Visible = False
+                nudTh32.Visible = False
+                nudTm12.Visible = False
+                nudTm22.Visible = False
+                nudTm32.Visible = False
+                Label99.Visible = True
+                Label92.Visible = True
+                Label85.Visible = True
+                lblStopTimeJ72.Visible = True
+                nudsh72.Visible = True
+                nudSm72.Visible = True
+                nudEm72.Visible = True
+                nudLoss72.Visible = True
+                Label97.Text = "1直夕礼･休憩"
+                frmMain.Cth2 = 7
+                frmMain.Ctm2 = 45
+                frmMain.Rth2 = 20
+                frmMain.Rtm2 = 0
         End Select
     End Sub
 
