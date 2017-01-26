@@ -132,6 +132,7 @@
 
     Public Sub nudPropertySetting()
         If WtFirstFlag = False Then
+            'ライン１
             Dim StSecS(7) As Long
             Dim StSecE(7) As Long
             WtSetNGFlag = False
@@ -150,7 +151,6 @@
             StSecE(5) = CLng(StSecS(5) + nudEm5.Value * 60)
             StSecE(6) = CLng(StSecS(6) + nudEm6.Value * 60)
             StSecE(7) = CLng(StSecS(7) + nudEm7.Value * 60)
-
             For i As Short = 1 To 6
                 If StSecS(i) > StSecS(i + 1) Then
                     If MsgBox("｢ライン停止時間｣の設定値が前後しています。", CType(vbOKCancel + vbExclamation, MsgBoxStyle)) = vbOK Then
@@ -167,81 +167,42 @@
                     End If
                 End If
             Next
+            'ライン２
+            Dim StSecS2(7) As Long
+            Dim StSecE2(7) As Long
+            WtSetNGFlag = False
+            '設定時間を「秒」に換算
+            StSecS2(1) = CLng(nudSh12.Value * 3600 + nudSm12.Value * 60)
+            StSecS2(2) = CLng(nudSh22.Value * 3600 + nudSm22.Value * 60)
+            StSecS2(3) = CLng(nudSh32.Value * 3600 + nudSm32.Value * 60)
+            StSecS2(4) = CLng(nudSh42.Value * 3600 + nudSm42.Value * 60)
+            StSecS2(5) = CLng(nudSh52.Value * 3600 + nudSm52.Value * 60)
+            StSecS2(6) = CLng(nudSh62.Value * 3600 + nudSm62.Value * 60)
+            StSecS2(7) = CLng(nudsh72.Value * 3600 + nudSm72.Value * 60)
+            StSecE2(1) = CLng(StSecS(1) + nudEm12.Value * 60)
+            StSecE2(2) = CLng(StSecS(2) + nudEm22.Value * 60)
+            StSecE2(3) = CLng(StSecS(3) + nudEm32.Value * 60)
+            StSecE2(4) = CLng(StSecS(4) + nudEm42.Value * 60)
+            StSecE2(5) = CLng(StSecS(5) + nudEm52.Value * 60)
+            StSecE2(6) = CLng(StSecS(6) + nudEm62.Value * 60)
+            StSecE2(7) = CLng(StSecS(7) + nudEm72.Value * 60)
+            For i As Short = 1 To 6
+                If StSecS2(i) > StSecS2(i + 1) Then
+                    If MsgBox("｢ライン停止時間｣の設定値が前後しています。", CType(vbOKCancel + vbExclamation, MsgBoxStyle)) = vbOK Then
+                        WtSetNGFlag = True
+                        Exit Sub
+                    End If
+                End If
+            Next
+            For i As Short = 1 To 6
+                If StSecE2(i) > StSecS2(i + 1) Then
+                    If MsgBox("｢停止時間｣の設定値が前後しています。", CType(vbOKCancel + vbExclamation, MsgBoxStyle)) = vbOK Then
+                        WtSetNGFlag = True
+                        Exit Sub
+                    End If
+                End If
+            Next
             ReDraw()
-        End If
-    End Sub
-
-
-    Private Sub nudsh1x_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1psh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1bsh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1bsh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1beh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1beh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1peh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1peh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2psh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2psh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2bsh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2bsh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2beh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2beh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2peh_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2peh.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1psm_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1psm.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1bsm_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1bsm.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1bem_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1bem.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt1pem_ValueChanged(sender As Object, e As EventArgs) Handles nudWt1pem.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2psm_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2psm.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2bsm_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2bsm.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2bem_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2bem.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub nudWt2pem_ValueChanged(sender As Object, e As EventArgs) Handles nudWt2pem.ValueChanged
-        nudPropertySetting()
-    End Sub
-
-    Private Sub btnWorkTimeOk_Click(sender As Object, e As EventArgs) Handles btnWorkTimeOk.Click
-        nudPropertySetting()
-        If WtSetNGFlag = False Then
-            ReDraw()
-            frmMain.SaveSetting()
-            frmMain.WorkTimeCalc()
         End If
     End Sub
 
@@ -461,6 +422,14 @@
         End Select
     End Sub
 
+    Private Sub btnWorkTimeOk_Click(sender As Object, e As EventArgs) Handles btnWorkTimeOk.Click
+        nudPropertySetting()
+        If WtSetNGFlag = False Then
+            ReDraw()
+            frmMain.SaveSetting()
+            frmMain.WorkTimeCalc()
+        End If
+    End Sub
 
     Private Sub btnWorkTimeCancel_Click(sender As Object, e As EventArgs) Handles btnWorkTimeCancel.Click
         nudPropertySetting()
@@ -469,127 +438,128 @@
         End If
     End Sub
 
-    Private Sub nudSh1_ValueChanged(sender As Object, e As EventArgs) Handles nudSh1.ValueChanged
+    Private Sub nudSh12_ValueChanged(sender As Object, e As EventArgs) Handles nudSh12.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm1_ValueChanged(sender As Object, e As EventArgs) Handles nudSm1.ValueChanged
+    Private Sub nudSm12_ValueChanged(sender As Object, e As EventArgs) Handles nudSm12.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm1_ValueChanged(sender As Object, e As EventArgs) Handles nudEm1.ValueChanged
+    Private Sub nudEm12_ValueChanged(sender As Object, e As EventArgs) Handles nudEm12.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss1_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss1.ValueChanged
+    Private Sub nudLoss12_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss12.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSh2_ValueChanged(sender As Object, e As EventArgs) Handles nudSh2.ValueChanged
+    Private Sub nudSh22_ValueChanged(sender As Object, e As EventArgs) Handles nudSh22.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm2_ValueChanged(sender As Object, e As EventArgs) Handles nudSm2.ValueChanged
+    Private Sub nudSm22_ValueChanged(sender As Object, e As EventArgs) Handles nudSm22.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm2_ValueChanged(sender As Object, e As EventArgs) Handles nudEm2.ValueChanged
+    Private Sub nudEm22_ValueChanged(sender As Object, e As EventArgs) Handles nudEm22.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss2_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss2.ValueChanged
+    Private Sub nudLoss22_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss22.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSh3_ValueChanged(sender As Object, e As EventArgs) Handles nudSh3.ValueChanged
+    Private Sub nudSh32_ValueChanged(sender As Object, e As EventArgs) Handles nudSh32.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm3_ValueChanged(sender As Object, e As EventArgs) Handles nudSm3.ValueChanged
+    Private Sub nudSm32_ValueChanged(sender As Object, e As EventArgs) Handles nudSm32.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm3_ValueChanged(sender As Object, e As EventArgs) Handles nudEm3.ValueChanged
+    Private Sub nudEm32_ValueChanged(sender As Object, e As EventArgs) Handles nudEm32.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss3_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss3.ValueChanged
+    Private Sub nudLoss32_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss32.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSh4_ValueChanged(sender As Object, e As EventArgs) Handles nudSh4.ValueChanged
+    Private Sub nudSh42_ValueChanged(sender As Object, e As EventArgs) Handles nudSh42.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm4_ValueChanged(sender As Object, e As EventArgs) Handles nudSm4.ValueChanged
+    Private Sub nudSm42_ValueChanged(sender As Object, e As EventArgs) Handles nudSm42.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm4_ValueChanged(sender As Object, e As EventArgs) Handles nudEm4.ValueChanged
+    Private Sub nudEm42_ValueChanged(sender As Object, e As EventArgs) Handles nudEm42.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss4_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss4.ValueChanged
+    Private Sub nudLoss42_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss42.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSh5_ValueChanged(sender As Object, e As EventArgs) Handles nudSh5.ValueChanged
+    Private Sub nudSh52_ValueChanged(sender As Object, e As EventArgs) Handles nudSh52.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm5_ValueChanged(sender As Object, e As EventArgs) Handles nudSm5.ValueChanged
+    Private Sub nudSm52_ValueChanged(sender As Object, e As EventArgs) Handles nudSm52.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm5_ValueChanged(sender As Object, e As EventArgs) Handles nudEm5.ValueChanged
+    Private Sub nudEm52_ValueChanged(sender As Object, e As EventArgs) Handles nudEm52.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss5_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss5.ValueChanged
+    Private Sub nudLoss52_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss52.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSh6_ValueChanged(sender As Object, e As EventArgs) Handles nudSh6.ValueChanged
+    Private Sub nudSh62_ValueChanged(sender As Object, e As EventArgs) Handles nudSh62.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm6_ValueChanged(sender As Object, e As EventArgs) Handles nudSm6.ValueChanged
+    Private Sub nudSm62_ValueChanged(sender As Object, e As EventArgs) Handles nudSm62.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm6_ValueChanged(sender As Object, e As EventArgs) Handles nudEm6.ValueChanged
+    Private Sub nudEm62_ValueChanged(sender As Object, e As EventArgs) Handles nudEm62.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss6_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss6.ValueChanged
+    Private Sub nudLoss62_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss62.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSh7_ValueChanged(sender As Object, e As EventArgs) Handles nudSh7.ValueChanged
+    Private Sub nudSh72_ValueChanged(sender As Object, e As EventArgs) Handles nudsh72.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudSm7_ValueChanged(sender As Object, e As EventArgs) Handles nudSm7.ValueChanged
+    Private Sub nudSm72_ValueChanged(sender As Object, e As EventArgs) Handles nudSm72.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudEm7_ValueChanged(sender As Object, e As EventArgs) Handles nudEm7.ValueChanged
+    Private Sub nudEm72_ValueChanged(sender As Object, e As EventArgs) Handles nudEm72.ValueChanged
         nudPropertySetting()
     End Sub
 
-    Private Sub nudLoss7_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss7.ValueChanged
+    Private Sub nudLoss72_ValueChanged(sender As Object, e As EventArgs) Handles nudLoss72.ValueChanged
         nudPropertySetting()
     End Sub
 
 
-    Private Sub rbtn2han_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn2han.CheckedChanged
-        frmMain.Han = 2
+    Private Sub rbtn2han2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn2han2.CheckedChanged
+        frmMain.Han2 = 2
         ReDraw()
     End Sub
 
-    Private Sub rbtn3han_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn3han.CheckedChanged
-        frmMain.Han = 3
+    Private Sub rbtn3han2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn3han2.CheckedChanged
+        frmMain.Han2 = 3
         ReDraw()
     End Sub
+
 
 End Class
