@@ -550,7 +550,6 @@
         nudPropertySetting()
     End Sub
 
-
     Private Sub rbtn2han2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn2han2.CheckedChanged
         frmMain.Han2 = 2
         ReDraw()

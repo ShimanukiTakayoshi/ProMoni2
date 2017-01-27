@@ -2310,8 +2310,8 @@
     End Sub
 
     Public Sub SaveSetting()
-        Dim ss(82) As String
-        For i As Short = 0 To 82
+        Dim ss(119) As String
+        For i As Short = 0 To 119
             ss(i) = "z"
         Next
         ss(0) = Str(Pln(0, 0))
@@ -2360,6 +2360,7 @@
         ss(43) = CStr(Qu(1, 2))
         ss(44) = CStr(Qu(1, 3))
         ss(45) = CStr(Qu(1, 4))
+        'ライン１
         For i As Short = 1 To 7
             ss(46 + 4 * (i - 1)) = CStr(WtSh(i))
             ss(47 + 4 * (i - 1)) = CStr(WtSm(i))
@@ -2375,12 +2376,28 @@
         ss(80) = CStr(End2H)
         ss(81) = CStr(End2M)
         ss(82) = CStr(Han)
+        'ライン２
+        For i As Short = 1 To 7
+            ss(83 + 4 * (i - 1)) = CStr(WtSh2(i))
+            ss(84 + 4 * (i - 1)) = CStr(WtSm2(i))
+            ss(85 + 4 * (i - 1)) = CStr(WtEm2(i))
+            ss(86 + 4 * (i - 1)) = CStr(WtLosR2(i))
+        Next i
+        ss(111) = CStr(7)
+        ss(112) = CStr(45)
+        ss(113) = CStr(Start1H2)
+        ss(114) = CStr(Start1M2)
+        ss(115) = CStr(Start2H2)
+        ss(116) = CStr(Start2M2)
+        ss(117) = CStr(End2H2)
+        ss(118) = CStr(End2M2)
+        ss(119) = CStr(Han2)
         Try
             Dim ofile As String = AppFolder & SystemFolder & "\Init.txt"
             System.IO.File.Delete(ofile)
             Dim sw As System.IO.StreamWriter
             sw = New System.IO.StreamWriter(ofile, True, System.Text.Encoding.GetEncoding(932))
-            For i As Short = 0 To 82
+            For i As Short = 0 To 119
                 sw.WriteLine(Trim(ss(i)))
             Next i
             sw.Close()
