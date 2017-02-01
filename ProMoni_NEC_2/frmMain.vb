@@ -53,6 +53,10 @@
     Public Wt2Choku As Integer = 42300     '2直稼動時間(秒)20:00-7:45
     Public Wt1Jisshitu As Integer = 0      '1実質稼働時間(秒) 休憩等の時間を差し引いた時間
     Public Wt2jisshitu As Integer = 0      '2実質稼働時間(秒) 休憩等の時間を差し引いた時間
+    Public Wt1Choku2 As Integer = 44100     '1直稼動時間(秒)7:45-20:00
+    Public Wt2Choku2 As Integer = 42300     '2直稼動時間(秒)20:00-7:45
+    Public Wt1Jisshitu2 As Integer = 0      '1実質稼働時間(秒) 休憩等の時間を差し引いた時間
+    Public Wt2jisshitu2 As Integer = 0      '2実質稼働時間(秒) 休憩等の時間を差し引いた時間
 
     Public Cth As Integer                  '自動ｶｳﾝﾀｸﾘｱ時間(h)
     Public Ctm As Integer                  '自動ｶｳﾝﾀｸﾘｱ時間(m)
@@ -1835,6 +1839,7 @@
     End Sub
 
     Public Sub WorkTimeCalc()
+        'ライン１
         Select Case Han
             Case 2
                 'Wt1Choku = 32400     '1直稼動時間(秒)8:00-17:00
@@ -1877,7 +1882,46 @@
         End If
         Wt1Jisshitu = Wt1Choku - (WtLosTime(1) + WtLosTime(2) + WtLosTime(3) + WtLosTime(7)) * 60
         Wt2jisshitu = Wt2Choku - (WtLosTime(4) + WtLosTime(5) + WtLosTime(6)) * 60
-        Dim x As Integer = 0
+        'ライン２
+        Select Case Han2
+            Case 2
+                'Wt1Choku = 32400     '1直稼動時間(秒)8:00-17:00
+                'Wt2Choku = 32400     '2直稼動時間(秒)17:00-26:00
+                Wt1Choku2 = (Start2H2 * 3600 + Start2M2 * 60) - (Start1H2 * 3600 + Start1M2 * 60)
+                Wt2Choku2 = (End2H2 * 3600 + End2M2 * 60) - (Start2H2 * 3600 + Start2M2 * 60)
+            Case Else
+                Wt1Choku2 = 44100     '1直稼動時間(秒)7:45-20:00
+                Wt2Choku2 = 42300     '2直稼動時間(秒)20:00-7:45
+        End Select
+        For i As Short = 1 To 7
+            WtS2(i) = WtSh2(i) * 3600 + WtSm2(i) * 60
+            WtE2(i) = WtEm2(i) * 60
+            WtPi2(1 + (i - 1) * 2) = WtS2(i)
+            WtPi2(2 + (i - 1) * 2) = WtS2(i) + WtE2(i)
+        Next
+        For i As Short = 1 To 7
+            WtLosTime2(i) = CInt(WtEm2(i) * (WtLosR2(i) / 100))
+        Next
+        If Han2 = 2 Then
+            WtBt2(0) = WtPi2(1) - (Start1H2 * 3600 + Start1M2 * 60)
+        Else
+            WtBt2(0) = WtPi2(1) - Cth2 * 3600 + Ctm2 * 60 - 900
+        End If
+        For i As Short = 1 To 13
+            WtBt2(i) = WtPi2(i + 1) - WtPi2(i)
+        Next
+        WtBt2(1) = CInt(WtBt2(1) * (1 - (WtLosR2(1) / 100)))
+        WtBt2(3) = CInt(WtBt2(3) * (1 - (WtLosR2(2) / 100)))
+        WtBt2(5) = CInt(WtBt2(5) * (1 - (WtLosR2(3) / 100)))
+        WtBt2(7) = CInt(WtBt2(7) * (1 - (WtLosR2(4) / 100)))
+        WtBt2(9) = CInt(WtBt2(9) * (1 - (WtLosR2(5) / 100)))
+        WtBt2(11) = CInt(WtBt2(11) * (1 - (WtLosR2(6) / 100)))
+        WtBt2(13) = CInt(WtBt2(13) * (1 - (WtLosR2(7) / 100)))
+        If Han2 = 2 Then
+            WtLosTime2(7) = 0
+        End If
+        Wt1Jisshitu2 = Wt1Choku2 - (WtLosTime2(1) + WtLosTime2(2) + WtLosTime2(3) + WtLosTime2(7)) * 60
+        Wt2jisshitu2 = Wt2Choku2 - (WtLosTime2(4) + WtLosTime2(5) + WtLosTime2(6)) * 60
     End Sub
 
     Public Sub CountClear()
