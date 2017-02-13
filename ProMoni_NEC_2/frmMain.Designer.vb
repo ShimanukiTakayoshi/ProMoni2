@@ -45,8 +45,6 @@ Partial Class frmMain
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.timSaveTime = New System.Windows.Forms.Timer(Me.components)
         Me.timScreenChange = New System.Windows.Forms.Timer(Me.components)
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -189,28 +187,12 @@ Partial Class frmMain
         '
         Me.timScreenChange.Interval = 1000
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(424, 0)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(91, 19)
-        Me.TextBox2.TabIndex = 78
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(569, 0)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(93, 19)
-        Me.TextBox3.TabIndex = 79
-        '
         'frmMain
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.LemonChiffon
         Me.ClientSize = New System.Drawing.Size(1362, 742)
         Me.ControlBox = False
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lblClock)
         Me.Controls.Add(Me.MenuStrip1)
@@ -247,6 +229,4 @@ Partial Class frmMain
     Friend WithEvents mnuScreenT As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreenV As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreenH As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
 End Class

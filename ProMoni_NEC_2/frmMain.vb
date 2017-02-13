@@ -563,8 +563,6 @@
             Case Else
                 DeltaTime2 = Nt2 - St2
         End Select
-        TextBox2.Text = Str(Wp2)
-        TextBox3.Text = Str(Nt2)
         '目標数量算出＆表示
         Dim azh2 As Integer
         Dim azm2 As Integer
@@ -1829,6 +1827,7 @@
     Public Sub GrupJisseki()
         Dim axx As Integer
         Dim DayX As Integer = GetDay()
+        Dim hanx As Integer = 0
         For j As Short = 0 To 1
             For i As Short = 0 To 2
                 Gp(i) = 0
@@ -1848,7 +1847,8 @@
                 axx = CInt(Val(Strings.Mid(KinmuData(4), i, 1)))
                 If axx > 0 Then GpTotal(j, axx - 1) = GpTotal(j, axx - 1) + DekidakaDataNight2(j, i) : GpChoku2(axx - 1) += 1
             Next
-            For i As Integer = 0 To Han - 1
+            If j = 0 Then hanx = Han - 1 Else hanx = Han2 - 1
+            For i As Integer = 0 To hanx
                 If GpChoku(i) > 0 Then
                     Gp(i) = CInt((GpTotal(j, i) + GpGeta(j, i)) / GpChoku(i))
                 Else
