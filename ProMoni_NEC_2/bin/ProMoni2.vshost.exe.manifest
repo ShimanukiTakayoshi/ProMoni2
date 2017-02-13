@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="ProMoni2.exe" version="1.0.0.25" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ProMoni2" version="1.0.6253.25513" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ProMoni2" version="1.0.6253.26616" language="neutral" processorArchitecture="msil" />
     <commandLine file="ProMoni2.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProMoni2.exe" size="311808">
-      <assemblyIdentity name="ProMoni2" version="1.0.6253.25513" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProMoni2.exe" size="312832">
+      <assemblyIdentity name="ProMoni2" version="1.0.6253.26616" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>k4OrTaZs+bXSbDRTHD/I0wbGsBk=</dsig:DigestValue>
+        <dsig:DigestValue>JUa6w3CLmguQ2GufJ+e17BywaHA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

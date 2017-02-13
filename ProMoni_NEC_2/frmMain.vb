@@ -100,6 +100,7 @@
     Public KinmuData(4) As String           '勤務ｶﾚﾝﾀﾞｰ
     Public Han As Integer = 2               '班編成数
     Public Han2 As Integer = 2               '班編成数
+    Public L2choku1Nomi As Integer
     Public ProPause As Boolean = False      '2直終了後動作一時停止ﾌﾗｸﾞ
     Public Start1H As Integer               '1直開始(時間)
     Public Start1M As Integer               '1直開始(分)
@@ -580,7 +581,7 @@
         If NowHour < azh2 Or (NowHour = azh2 And NowMinute < azm2) Then            'Ver2.0
             ChokuFlag = False
             For i As Short = 0 To 4
-                Takto2(i) = (Wt1Jisshitu / (Pln(j, i) / 2))
+                Takto2(i) = (Wt1Jisshitu2 / (Pln(j, i) / 2))
                 Trg(j, i) = CInt(DeltaTime2 / Takto2(i))
                 Trr(j, i) = CInt(DeltaTime2 / Tkt(j, i))
             Next i
@@ -588,9 +589,9 @@
             ChokuChangeFlag = False
             ChokuFlag = True
             For i As Short = 0 To 4
-                Takto2(i) = (Wt2jisshitu / (Pln(j, i) / 2))
-                Trg(j, i) = CInt(Pln(j, i) / 2 + (DeltaTime2 - Wt1Jisshitu) / Takto2(i))
-                Trr(j, i) = CInt(Wt1Jisshitu / Tkt(j, i) + (DeltaTime2 - Wt1Jisshitu) / Tkt(j, i))
+                Takto2(i) = (Wt2jisshitu2 / (Pln(j, i) / 2))
+                Trg(j, i) = CInt(Pln(j, i) / 2 + (DeltaTime2 - Wt1Jisshitu2) / Takto2(i))
+                Trr(j, i) = CInt(Wt1Jisshitu2 / Tkt(j, i) + (DeltaTime2 - Wt1Jisshitu2) / Tkt(j, i))
             Next i
             If NowHour = Rth And NowMinute = Rtm And NowSecond < 5 Then ReDrawFlag(1) = True 'Ver2.0 変更
         End If
@@ -607,7 +608,7 @@
                 If ChokuFlag = False Then
                     ChokuDataTrg1(j, i) = ax(i)
                 Else
-                    ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu / (Wt1Jisshitu / (bx(i) / 2))))
+                    ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu2 / (Wt1Jisshitu2 / (bx(i) / 2))))
                 End If
                 WrTrgA(j, i) = CInt(sx(i))
             End If
@@ -2497,6 +2498,7 @@
             End2H2 = CInt(CSng(sr.ReadLine()))
             End2M2 = CInt(CSng(sr.ReadLine()))
             Han2 = CInt(sr.ReadLine())
+            L2choku1Nomi = CInt(sr.ReadLine())
             sr.Close()
             If Han2 = 2 Then
                 Cth2 = End2H2 : Ctm2 = End2M2
@@ -2512,8 +2514,8 @@
     End Sub
 
     Public Sub SaveSetting()
-        Dim ss(119) As String
-        For i As Short = 0 To 119
+        Dim ss(120) As String
+        For i As Short = 0 To 120
             ss(i) = "z"
         Next
         ss(0) = Str(Pln(0, 0))
@@ -2594,12 +2596,13 @@
         ss(117) = CStr(End2H2)
         ss(118) = CStr(End2M2)
         ss(119) = CStr(Han2)
+        ss(120) = CStr(L2choku1Nomi)
         Try
             Dim ofile As String = AppFolder & SystemFolder & "\Init.txt"
             System.IO.File.Delete(ofile)
             Dim sw As System.IO.StreamWriter
             sw = New System.IO.StreamWriter(ofile, True, System.Text.Encoding.GetEncoding(932))
-            For i As Short = 0 To 119
+            For i As Short = 0 To 120
                 sw.WriteLine(Trim(ss(i)))
             Next i
             sw.Close()

@@ -118,7 +118,12 @@
             Case Else
                 rbtn3han2.Checked = True
         End Select
-
+        Select Case frmMain.L2choku1Nomi
+            Case 0
+                cbxChoku1Nomi.Checked = False
+            Case Else
+                cbxChoku1Nomi.Checked = True
+        End Select
         ReDraw()
         nudPropertySetting()
         WtFirstFlag = False
@@ -560,4 +565,11 @@
         ReDraw()
     End Sub
 
+    Private Sub cbxChoku1Nomi_CheckedChanged(sender As Object, e As EventArgs) Handles cbxChoku1Nomi.CheckedChanged
+        If cbxChoku1Nomi.Checked = False Then
+            frmMain.L2choku1Nomi = 0
+        Else
+            frmMain.L2choku1Nomi = 1
+        End If
+    End Sub
 End Class

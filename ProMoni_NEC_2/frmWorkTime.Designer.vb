@@ -244,6 +244,7 @@ Partial Class frmWorkTime
         Me.Label98 = New System.Windows.Forms.Label()
         Me.Label99 = New System.Windows.Forms.Label()
         Me.Label100 = New System.Windows.Forms.Label()
+        Me.cbxChoku1Nomi = New System.Windows.Forms.CheckBox()
         CType(Me.nudWt1psh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudWt1psm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudWt1bsm, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1981,6 +1982,7 @@ Partial Class frmWorkTime
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.YellowGreen
+        Me.GroupBox2.Controls.Add(Me.cbxChoku1Nomi)
         Me.GroupBox2.Controls.Add(Me.Label60)
         Me.GroupBox2.Controls.Add(Me.rbtn3han2)
         Me.GroupBox2.Controls.Add(Me.rbtn2han2)
@@ -2933,6 +2935,17 @@ Partial Class frmWorkTime
         Me.Label100.TabIndex = 74
         Me.Label100.Text = "2直分再投入"
         '
+        'cbxChoku1Nomi
+        '
+        Me.cbxChoku1Nomi.AutoSize = True
+        Me.cbxChoku1Nomi.Font = New System.Drawing.Font("ＭＳ ゴシック", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cbxChoku1Nomi.Location = New System.Drawing.Point(52, 71)
+        Me.cbxChoku1Nomi.Name = "cbxChoku1Nomi"
+        Me.cbxChoku1Nomi.Size = New System.Drawing.Size(87, 20)
+        Me.cbxChoku1Nomi.TabIndex = 173
+        Me.cbxChoku1Nomi.Text = "1直のみ"
+        Me.cbxChoku1Nomi.UseVisualStyleBackColor = True
+        '
         'frmWorkTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -3330,4 +3343,5 @@ Partial Class frmWorkTime
     Friend WithEvents Label98 As System.Windows.Forms.Label
     Friend WithEvents Label99 As System.Windows.Forms.Label
     Friend WithEvents Label100 As System.Windows.Forms.Label
+    Friend WithEvents cbxChoku1Nomi As System.Windows.Forms.CheckBox
 End Class
