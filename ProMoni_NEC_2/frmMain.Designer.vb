@@ -45,6 +45,8 @@ Partial Class frmMain
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.timSaveTime = New System.Windows.Forms.Timer(Me.components)
         Me.timScreenChange = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,7 +72,7 @@ Partial Class frmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.設定SToolStripMenuItem, Me.mnuClear, Me.mnuCalendar, Me.mnuScreen})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1362, 26)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1362, 24)
         Me.MenuStrip1.TabIndex = 75
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -78,92 +80,92 @@ Partial Class frmMain
         '
         Me.設定SToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSetPln, Me.mnuSetTkt, Me.mnuWorkTime, Me.mnuSystem, Me.mnuClearTime, Me.mnuEnd})
         Me.設定SToolStripMenuItem.Name = "設定SToolStripMenuItem"
-        Me.設定SToolStripMenuItem.Size = New System.Drawing.Size(62, 22)
+        Me.設定SToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.設定SToolStripMenuItem.Text = "設定(&S)"
         '
         'mnuSetPln
         '
         Me.mnuSetPln.Name = "mnuSetPln"
-        Me.mnuSetPln.Size = New System.Drawing.Size(184, 22)
+        Me.mnuSetPln.Size = New System.Drawing.Size(182, 22)
         Me.mnuSetPln.Text = "日産数設定(&N)"
         '
         'mnuSetTkt
         '
         Me.mnuSetTkt.Name = "mnuSetTkt"
-        Me.mnuSetTkt.Size = New System.Drawing.Size(184, 22)
+        Me.mnuSetTkt.Size = New System.Drawing.Size(182, 22)
         Me.mnuSetTkt.Text = "タクト設定(&T)"
         '
         'mnuWorkTime
         '
         Me.mnuWorkTime.Name = "mnuWorkTime"
-        Me.mnuWorkTime.Size = New System.Drawing.Size(184, 22)
+        Me.mnuWorkTime.Size = New System.Drawing.Size(182, 22)
         Me.mnuWorkTime.Text = "稼動時間設定(&W)"
         '
         'mnuSystem
         '
         Me.mnuSystem.Name = "mnuSystem"
-        Me.mnuSystem.Size = New System.Drawing.Size(184, 22)
+        Me.mnuSystem.Size = New System.Drawing.Size(182, 22)
         Me.mnuSystem.Text = "システム設定(&S)"
         '
         'mnuClearTime
         '
         Me.mnuClearTime.Name = "mnuClearTime"
-        Me.mnuClearTime.Size = New System.Drawing.Size(184, 22)
+        Me.mnuClearTime.Size = New System.Drawing.Size(182, 22)
         Me.mnuClearTime.Text = "ｶｳﾝﾄｸﾘｱ時間設定(&C)"
         '
         'mnuEnd
         '
         Me.mnuEnd.Name = "mnuEnd"
-        Me.mnuEnd.Size = New System.Drawing.Size(184, 22)
+        Me.mnuEnd.Size = New System.Drawing.Size(182, 22)
         Me.mnuEnd.Text = "終了(&E)"
         '
         'mnuClear
         '
         Me.mnuClear.Name = "mnuClear"
-        Me.mnuClear.Size = New System.Drawing.Size(82, 22)
+        Me.mnuClear.Size = New System.Drawing.Size(81, 20)
         Me.mnuClear.Text = "ｶｳﾝﾄｸﾘｱ(&M)"
         '
         'mnuCalendar
         '
         Me.mnuCalendar.Name = "mnuCalendar"
-        Me.mnuCalendar.Size = New System.Drawing.Size(110, 22)
+        Me.mnuCalendar.Size = New System.Drawing.Size(109, 20)
         Me.mnuCalendar.Text = "班編制ｶﾚﾝﾀﾞｰ(&K)"
         '
         'mnuScreen
         '
         Me.mnuScreen.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuScreen1, Me.mnuScreen2, Me.mnuScreenT, Me.mnuScreenV, Me.mnuScreenH})
         Me.mnuScreen.Name = "mnuScreen"
-        Me.mnuScreen.Size = New System.Drawing.Size(111, 22)
+        Me.mnuScreen.Size = New System.Drawing.Size(110, 20)
         Me.mnuScreen.Text = "画面表示切替(&G)"
         '
         'mnuScreen1
         '
         Me.mnuScreen1.Name = "mnuScreen1"
-        Me.mnuScreen1.Size = New System.Drawing.Size(198, 22)
+        Me.mnuScreen1.Size = New System.Drawing.Size(186, 22)
         Me.mnuScreen1.Text = "ライン１(&1)"
         '
         'mnuScreen2
         '
         Me.mnuScreen2.Name = "mnuScreen2"
-        Me.mnuScreen2.Size = New System.Drawing.Size(198, 22)
+        Me.mnuScreen2.Size = New System.Drawing.Size(186, 22)
         Me.mnuScreen2.Text = "ライン２(&2)"
         '
         'mnuScreenT
         '
         Me.mnuScreenT.Name = "mnuScreenT"
-        Me.mnuScreenT.Size = New System.Drawing.Size(198, 22)
+        Me.mnuScreenT.Size = New System.Drawing.Size(186, 22)
         Me.mnuScreenT.Text = "ライン1･2時間切換(&T)"
         '
         'mnuScreenV
         '
         Me.mnuScreenV.Name = "mnuScreenV"
-        Me.mnuScreenV.Size = New System.Drawing.Size(198, 22)
+        Me.mnuScreenV.Size = New System.Drawing.Size(186, 22)
         Me.mnuScreenV.Text = "ライン1･2縦表示(&V)"
         '
         'mnuScreenH
         '
         Me.mnuScreenH.Name = "mnuScreenH"
-        Me.mnuScreenH.Size = New System.Drawing.Size(198, 22)
+        Me.mnuScreenH.Size = New System.Drawing.Size(186, 22)
         Me.mnuScreenH.Text = "ライン1･2横表示(&H)"
         '
         'TextBox1
@@ -187,12 +189,28 @@ Partial Class frmMain
         '
         Me.timScreenChange.Interval = 1000
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(424, 0)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(91, 19)
+        Me.TextBox2.TabIndex = 78
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(569, 0)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(93, 19)
+        Me.TextBox3.TabIndex = 79
+        '
         'frmMain
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.LemonChiffon
         Me.ClientSize = New System.Drawing.Size(1362, 742)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lblClock)
         Me.Controls.Add(Me.MenuStrip1)
@@ -229,4 +247,6 @@ Partial Class frmMain
     Friend WithEvents mnuScreenT As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreenV As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuScreenH As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
 End Class

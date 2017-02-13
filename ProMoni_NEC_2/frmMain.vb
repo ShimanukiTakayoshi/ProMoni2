@@ -163,7 +163,6 @@
     '------いらないかもしれない変数
     Public dtrg(1, 4) As String                '達成率計算用1
     Public dtrg1(4) As String               '達成率計算用2
-    Public dtrg2(4) As String               '達成率計算用3
     Public dnow(1, 4) As String                '達成率計算用4
     Public drat(4) As String                '稼働率計算用
     Public ReDrawFlag(10) As Boolean        '最描写ﾌﾗｸﾞ
@@ -247,210 +246,392 @@
         Dim NowMinute As Integer = CInt(Val(Strings.Mid(NowTime, 4, 2)))
         Dim NowSecond As Integer = CInt(Val(Strings.Mid(NowTime, 7, 2)))
         Dim sx(4) As String
-        For j As Short = 0 To 1
-            'AM0時～7時45分->24時～31時45分に変換
-            'If NowHour < 7 Or (NowHour = 7 And NowMinute < 45) Then NowHour = NowHour + 24     Ver1.0
-            'Ver2.0
-            If Han = 2 Then
-                If NowHour < Start1H Or (NowHour = Start1H And NowMinute < Start1M) Then NowHour = NowHour + 24
-            Else
-                If NowHour < Cth Or (NowHour = Cth And NowMinute < Ctm) Then NowHour = NowHour + 24
-            End If
-            Dim Nt As Integer = NowHour * 3600 + NowMinute * 60 + NowSecond
-            '1直開始ｶｳﾝﾄｸﾘｱ
-            If ChokuChangeFlag = False And NowHour = Cth And NowMinute = Ctm And ProPause = False Then
-                '２直部目標値を計画値と同じにする
-                For i As Short = 0 To 4
-                    If ChokuFlag = True Then
-                        sx(i) = CurCh(Str(Pln(j, i) / 2))
-                        If dtrg2(i) <> sx(i) Or ReDrawFlag(1) Then
-                            'g.FillRectangle(Brushes.Blue, rx1(i))
-                            'PutNumber(CInt(sx(i)), 270 + (160 * i), 370, gcWhite)
-                            dtrg2(i) = sx(i)
-                        End If
-                    Else
-                        'g.FillRectangle(Brushes.Blue, rx1(i))
-                    End If
-                Next i
-                timScan.Enabled = False     'Ver2.0 追加
-                ProPause = True             'Ver2.0 追加
-                DekidakaHozon()
-                Capturex()
-                SaveJisseki()
-                'CountClear()               'Ver2.0 削除
-                ChokuChangeFlag = True
-                DekidakaSum()
-                timScan.Enabled = True      'Ver2.0 追加
-                Exit Sub
-            End If
-            'Ver2.0 追加
-            If ProPause = True And NowHour = Start1H And NowMinute = Start1M Then
-                CountClear()
-                ProPause = False
-                Exit Sub
-            ElseIf ProPause = True Then
-                For i As Integer = 0 To 4
-                    WrTrgA(j, i) = CInt(Pln(j, i))
-                    WrTrgB(j, i) = CInt(Pln(j, i) / 2)
-                    WrTrgC(j, i) = CInt(Pln(j, i) / 2)
-                Next i
-                Exit Sub
-            End If
-            'Dim St As Decimal = 7 * 3600 + 45 * 60         'Ver1.0
-            'Ver2.0
-            Dim St As Integer
-            If Han = 2 Then
-                St = Start1H * 3600 + Start1M * 60
-            Else
-                St = Cth * 3600 + Ctm * 60
-            End If
-            Dim Wp As Integer = 0
-            Dim DeltaTime As Integer = 0
-            Dim xxx As Long = CLng(WtLosR(1))
-            'ワークポジション設定
-            If Nt < WtPi(1) Then
-                Wp = 0
-            ElseIf Nt >= WtPi(1) And Nt < WtPi(2) Then
-                Wp = 1
-            ElseIf Nt >= WtPi(2) And Nt < WtPi(3) Then
-                Wp = 2
-            ElseIf Nt >= WtPi(3) And Nt < WtPi(4) Then
-                Wp = 3
-            ElseIf Nt >= WtPi(4) And Nt < WtPi(5) Then
-                Wp = 4
-            ElseIf Nt >= WtPi(5) And Nt < WtPi(6) Then
-                Wp = 5
-            ElseIf Nt >= WtPi(6) And Nt < WtPi(7) Then
-                Wp = 6
-            ElseIf Nt >= WtPi(7) And Nt < WtPi(8) Then
-                Wp = 7
-            ElseIf Nt >= WtPi(8) And Nt < WtPi(9) Then
-                Wp = 8
-            ElseIf Nt >= WtPi(9) And Nt < WtPi(10) Then
-                Wp = 9
-            ElseIf Nt >= WtPi(10) And Nt < WtPi(11) Then
-                Wp = 10
-            ElseIf Nt >= WtPi(11) And Nt < WtPi(12) Then
-                Wp = 11
-            ElseIf Nt >= WtPi(12) And Nt < WtPi(13) Then
-                Wp = 12
-            ElseIf Nt >= WtPi(13) And Nt < WtPi(14) Then
-                Wp = 13
-            Else
-                Wp = 0
-            End If
-            '実稼動時間算出
-            ' WtBt(0) = WtBt(0) + 2700
-            Select Case Wp
-                Case 0
-                    DeltaTime = Nt - St
-                Case 1
-                    DeltaTime = CInt(WtBt(0) + (Nt - WtPi(1)) * (1 - (WtLosR(1) / 100)))
-                Case 2
-                    DeltaTime = WtBt(0) + WtBt(1) + (Nt - WtPi(2))
-                Case 3
-                    DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + (Nt - WtPi(3)) * (1 - (WtLosR(2) / 100)))
-                Case 4
-                    DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + (Nt - WtPi(4))
-                Case 5
-                    DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + (Nt - WtPi(5)) * (1 - WtLosR(3) / 100))
-                Case 6
-                    DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + (Nt - WtPi(6))
-                Case 7
-                    DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + (Nt - WtPi(7)) * (1 - WtLosR(4) / 100))
-                Case 8
-                    DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + (Nt - WtPi(8))
-                Case 9
-                    DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + (Nt - WtPi(9)) * (1 - WtLosR(5) / 100))
-                Case 10
-                    DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + (Nt - WtPi(10))
-                Case 11
-                    DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + WtBt(10) + (Nt - WtPi(11)) * (1 - WtLosR(6) / 100))
-                Case 12
-                    DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + WtBt(10) + WtBt(11) + (Nt - WtPi(12))
-                Case 13
-                    DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + WtBt(10) + WtBt(11) + WtBt(12) + (Nt - WtPi(13)) * (1 - WtLosR(7) / 100))
-                Case Else
-                    DeltaTime = Nt - St
-            End Select
-            '目標数量算出＆表示
-            Dim azh As Integer
-            Dim azm As Integer
-            Select Case Han
-                Case 2
-                    azh = CInt(Start2H)
-                    azm = CInt(Start2M)
-                Case Else
-                    azh = CInt(Cth)
-                    azm = CInt(Ctm)
-            End Select
-            'If toriaezuFlag = False Then
-            '    For i As Short = 0 To 4
-            '        Trg(i) = CInt((DeltaTime / Tkt(i)))
-            '    Next i
-            'Else
-            Dim Takto(4) As Double
-            If NowHour < azh Or (NowHour = azh And NowMinute < azm) Then            'Ver2.0
-                ChokuFlag = False
-                For i As Short = 0 To 4
-                    Takto(i) = (Wt1Jisshitu / (Pln(j, i) / 2))
-                    Trg(j, i) = CInt(DeltaTime / Takto(i))
-                    Trr(j, i) = CInt(DeltaTime / Tkt(j, i))
-                Next i
-            Else
-                ChokuChangeFlag = False
-                ChokuFlag = True
-                For i As Short = 0 To 4
-                    Takto(i) = (Wt2jisshitu / (Pln(j, i) / 2))
-                    Trg(j, i) = CInt(Pln(j, i) / 2 + (DeltaTime - Wt1Jisshitu) / Takto(i))
-                    Trr(j, i) = CInt(Wt1Jisshitu / Tkt(j, i) + (DeltaTime - Wt1Jisshitu) / Tkt(j, i))
-                Next i
-                If NowHour = Rth And NowMinute = Rtm And NowSecond < 5 Then ReDrawFlag(1) = True 'Ver2.0 変更
-            End If
-            'End If
-            '合計部
-            Dim ax(4) As Integer
-            Dim bx(4) As Integer
-            For i As Short = 0 To 4
-                ax(i) = CInt(Trg(j, i))
-                bx(i) = CInt(Pln(j, i))
-            Next i
-            For i As Short = 0 To 4
-                sx(i) = CurCh(ClmInt(CInt(Str(ax(i)))))
-                If dtrg(j, i) <> sx(i) Or ReDrawFlag(1) Then
-                    dtrg(j, i) = sx(i)
-                    If ChokuFlag = False Then
-                        ChokuDataTrg1(j, i) = ax(i)
-                    Else
-                        ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu / (Wt1Jisshitu / (bx(i) / 2))))
-                    End If
-                    WrTrgA(j, i) = CInt(sx(i))
-                End If
-            Next i
-            '１直部
-            For i As Short = 0 To 4
-                sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg1(j, i)))))
-                If dtrg1(i) <> sx(i) Or ReDrawFlag(1) Then
-                    If ChokuFlag = True Then
-                        If ReDrawFlag(1) = False Then Exit For
-                        sx(i) = CurCh(Str(Pln(j, i) / 2))
-                    End If
-                    dtrg1(i) = sx(i)
-                    WrTrgB(j, i) = CInt(sx(i))
-                End If
-            Next i
-            '２直部
+        Dim j As Short = 0
+        'ライン１
+        j = 0
+        'AM0時～7時45分->24時～31時45分に変換
+        'If NowHour < 7 Or (NowHour = 7 And NowMinute < 45) Then NowHour = NowHour + 24     Ver1.0
+        'Ver2.0
+        If Han = 2 Then
+            If NowHour < Start1H Or (NowHour = Start1H And NowMinute < Start1M) Then NowHour = NowHour + 24
+        Else
+            If NowHour < Cth Or (NowHour = Cth And NowMinute < Ctm) Then NowHour = NowHour + 24
+        End If
+        Dim Nt As Integer = NowHour * 3600 + NowMinute * 60 + NowSecond
+        '1直開始ｶｳﾝﾄｸﾘｱ
+        If ChokuChangeFlag = False And NowHour = Cth And NowMinute = Ctm And ProPause = False Then
+            '２直部目標値を計画値と同じにする
             For i As Short = 0 To 4
                 If ChokuFlag = True Then
-                    sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg2(j, i)))))
-                    If dtrg2(i) <> sx(i) Or ReDrawFlag(1) Then
-                        dtrg2(i) = sx(i)
-                    End If
-                    WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+                    sx(i) = CurCh(Str(Pln(j, i) / 2))
+                Else
+                    'g.FillRectangle(Brushes.Blue, rx1(i))
                 End If
-                WrTrgC(j, i) = CInt(sx(i))
             Next i
-        Next j
+            timScan.Enabled = False     'Ver2.0 追加
+            ProPause = True             'Ver2.0 追加
+            DekidakaHozon()
+            Capturex()
+            SaveJisseki()
+            'CountClear()               'Ver2.0 削除
+            ChokuChangeFlag = True
+            DekidakaSum()
+            timScan.Enabled = True      'Ver2.0 追加
+            Exit Sub
+        End If
+        'Ver2.0 追加
+        If ProPause = True And NowHour = Start1H And NowMinute = Start1M Then
+            CountClear()
+            ProPause = False
+            Exit Sub
+        ElseIf ProPause = True Then
+            For i As Integer = 0 To 4
+                WrTrgA(j, i) = CInt(Pln(j, i))
+                WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+                WrTrgC(j, i) = CInt(Pln(j, i) / 2)
+            Next i
+            Exit Sub
+        End If
+        'Dim St As Decimal = 7 * 3600 + 45 * 60         'Ver1.0
+        'Ver2.0
+        Dim St As Integer
+        If Han = 2 Then
+            St = Start1H * 3600 + Start1M * 60
+        Else
+            St = Cth * 3600 + Ctm * 60
+        End If
+        Dim Wp As Integer = 0
+        Dim DeltaTime As Integer = 0
+        'ワークポジション設定
+        If Nt < WtPi(1) Then
+            Wp = 0
+        ElseIf Nt >= WtPi(1) And Nt < WtPi(2) Then
+            Wp = 1
+        ElseIf Nt >= WtPi(2) And Nt < WtPi(3) Then
+            Wp = 2
+        ElseIf Nt >= WtPi(3) And Nt < WtPi(4) Then
+            Wp = 3
+        ElseIf Nt >= WtPi(4) And Nt < WtPi(5) Then
+            Wp = 4
+        ElseIf Nt >= WtPi(5) And Nt < WtPi(6) Then
+            Wp = 5
+        ElseIf Nt >= WtPi(6) And Nt < WtPi(7) Then
+            Wp = 6
+        ElseIf Nt >= WtPi(7) And Nt < WtPi(8) Then
+            Wp = 7
+        ElseIf Nt >= WtPi(8) And Nt < WtPi(9) Then
+            Wp = 8
+        ElseIf Nt >= WtPi(9) And Nt < WtPi(10) Then
+            Wp = 9
+        ElseIf Nt >= WtPi(10) And Nt < WtPi(11) Then
+            Wp = 10
+        ElseIf Nt >= WtPi(11) And Nt < WtPi(12) Then
+            Wp = 11
+        ElseIf Nt >= WtPi(12) And Nt < WtPi(13) Then
+            Wp = 12
+        ElseIf Nt >= WtPi(13) And Nt < WtPi(14) Then
+            Wp = 13
+        Else
+            Wp = 0
+        End If
+        '実稼動時間算出
+        ' WtBt(0) = WtBt(0) + 2700
+        Select Case Wp
+            Case 0
+                DeltaTime = Nt - St
+            Case 1
+                DeltaTime = CInt(WtBt(0) + (Nt - WtPi(1)) * (1 - (WtLosR(1) / 100)))
+            Case 2
+                DeltaTime = WtBt(0) + WtBt(1) + (Nt - WtPi(2))
+            Case 3
+                DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + (Nt - WtPi(3)) * (1 - (WtLosR(2) / 100)))
+            Case 4
+                DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + (Nt - WtPi(4))
+            Case 5
+                DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + (Nt - WtPi(5)) * (1 - WtLosR(3) / 100))
+            Case 6
+                DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + (Nt - WtPi(6))
+            Case 7
+                DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + (Nt - WtPi(7)) * (1 - WtLosR(4) / 100))
+            Case 8
+                DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + (Nt - WtPi(8))
+            Case 9
+                DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + (Nt - WtPi(9)) * (1 - WtLosR(5) / 100))
+            Case 10
+                DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + (Nt - WtPi(10))
+            Case 11
+                DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + WtBt(10) + (Nt - WtPi(11)) * (1 - WtLosR(6) / 100))
+            Case 12
+                DeltaTime = WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + WtBt(10) + WtBt(11) + (Nt - WtPi(12))
+            Case 13
+                DeltaTime = CInt(WtBt(0) + WtBt(1) + WtBt(2) + WtBt(3) + WtBt(4) + WtBt(5) + WtBt(6) + WtBt(7) + WtBt(8) + WtBt(9) + WtBt(10) + WtBt(11) + WtBt(12) + (Nt - WtPi(13)) * (1 - WtLosR(7) / 100))
+            Case Else
+                DeltaTime = Nt - St
+        End Select
+        '目標数量算出＆表示
+        Dim azh As Integer
+        Dim azm As Integer
+        Select Case Han
+            Case 2
+                azh = CInt(Start2H)
+                azm = CInt(Start2M)
+            Case Else
+                azh = CInt(Cth)
+                azm = CInt(Ctm)
+        End Select
+        Dim Takto(4) As Double
+        If NowHour < azh Or (NowHour = azh And NowMinute < azm) Then            'Ver2.0
+            ChokuFlag = False
+            For i As Short = 0 To 4
+                Takto(i) = (Wt1Jisshitu / (Pln(j, i) / 2))
+                Trg(j, i) = CInt(DeltaTime / Takto(i))
+                Trr(j, i) = CInt(DeltaTime / Tkt(j, i))
+            Next i
+        Else
+            ChokuChangeFlag = False
+            ChokuFlag = True
+            For i As Short = 0 To 4
+                Takto(i) = (Wt2jisshitu / (Pln(j, i) / 2))
+                Trg(j, i) = CInt(Pln(j, i) / 2 + (DeltaTime - Wt1Jisshitu) / Takto(i))
+                Trr(j, i) = CInt(Wt1Jisshitu / Tkt(j, i) + (DeltaTime - Wt1Jisshitu) / Tkt(j, i))
+            Next i
+            If NowHour = Rth And NowMinute = Rtm And NowSecond < 5 Then ReDrawFlag(1) = True 'Ver2.0 変更
+        End If
+        'End If
+        '合計部
+        Dim ax(4) As Integer
+        Dim bx(4) As Integer
+        For i As Short = 0 To 4
+            ax(i) = CInt(Trg(j, i))
+            bx(i) = CInt(Pln(j, i))
+        Next i
+        For i As Short = 0 To 4
+            sx(i) = CurCh(ClmInt(CInt(Str(ax(i)))))
+            If dtrg(j, i) <> sx(i) Or ReDrawFlag(1) Then
+                dtrg(j, i) = sx(i)
+                If ChokuFlag = False Then
+                    ChokuDataTrg1(j, i) = ax(i)
+                Else
+                    ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu / (Wt1Jisshitu / (bx(i) / 2))))
+                End If
+                WrTrgA(j, i) = CInt(sx(i))
+            End If
+        Next i
+        '１直部
+        For i As Short = 0 To 4
+            sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg1(j, i)))))
+            If dtrg1(i) <> sx(i) Or ReDrawFlag(1) Then
+                If ChokuFlag = True Then
+                    If ReDrawFlag(1) = False Then Exit For
+                    sx(i) = CurCh(Str(Pln(j, i) / 2))
+                End If
+                dtrg1(i) = sx(i)
+                WrTrgB(j, i) = CInt(sx(i))
+            End If
+        Next i
+        '２直部
+        For i As Short = 0 To 4
+            If ChokuFlag = True Then
+                sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg2(j, i)))))
+                WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+            End If
+            WrTrgC(j, i) = CInt(sx(i))
+        Next i
+        'ライン２
+        j = 1
+        'AM0時～7時45分->24時～31時45分に変換
+        'If NowHour < 7 Or (NowHour = 7 And NowMinute < 45) Then NowHour = NowHour + 24     Ver1.0
+        'Ver2.0
+        If Han2 = 2 Then
+            If NowHour < Start1H Or (NowHour = Start1H And NowMinute < Start1M) Then NowHour = NowHour + 24
+        Else
+            If NowHour < Cth Or (NowHour = Cth And NowMinute < Ctm) Then NowHour = NowHour + 24
+        End If
+        Dim Nt2 As Integer = NowHour * 3600 + NowMinute * 60 + NowSecond
+        '1直開始ｶｳﾝﾄｸﾘｱ
+        If ChokuChangeFlag = False And NowHour = Cth And NowMinute = Ctm And ProPause = False Then
+            '２直部目標値を計画値と同じにする
+            For i As Short = 0 To 4
+                If ChokuFlag = True Then
+                    sx(i) = CurCh(Str(Pln(j, i) / 2))
+                Else
+                    'g.FillRectangle(Brushes.Blue, rx1(i))
+                End If
+            Next i
+            timScan.Enabled = False     'Ver2.0 追加
+            ProPause = True             'Ver2.0 追加
+            DekidakaHozon()
+            Capturex()
+            SaveJisseki()
+            'CountClear()               'Ver2.0 削除
+            ChokuChangeFlag = True
+            DekidakaSum()
+            timScan.Enabled = True      'Ver2.0 追加
+            Exit Sub
+        End If
+        'Ver2.0 追加
+        If ProPause = True And NowHour = Start1H And NowMinute = Start1M Then
+            CountClear()
+            ProPause = False
+            Exit Sub
+        ElseIf ProPause = True Then
+            For i As Integer = 0 To 4
+                WrTrgA(j, i) = CInt(Pln(j, i))
+                WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+                WrTrgC(j, i) = CInt(Pln(j, i) / 2)
+            Next i
+            Exit Sub
+        End If
+        'Dim St As Decimal = 7 * 3600 + 45 * 60         'Ver1.0
+        'Ver2.0
+        Dim St2 As Integer
+        If Han2 = 2 Then
+            St2 = Start1H * 3600 + Start1M * 60
+        Else
+            St2 = Cth * 3600 + Ctm * 60
+        End If
+        Dim Wp2 As Integer = 0
+        Dim DeltaTime2 As Integer = 0
+        'ワークポジション設定
+        If Nt2 < WtPi2(1) Then
+            Wp2 = 0
+        ElseIf Nt2 >= WtPi2(1) And Nt2 < WtPi2(2) Then
+            Wp2 = 1
+        ElseIf Nt2 >= WtPi2(2) And Nt2 < WtPi2(3) Then
+            Wp2 = 2
+        ElseIf Nt2 >= WtPi2(3) And Nt2 < WtPi2(4) Then
+            Wp2 = 3
+        ElseIf Nt2 >= WtPi2(4) And Nt2 < WtPi2(5) Then
+            Wp2 = 4
+        ElseIf Nt2 >= WtPi2(5) And Nt2 < WtPi2(6) Then
+            Wp2 = 5
+        ElseIf Nt2 >= WtPi2(6) And Nt2 < WtPi2(7) Then
+            Wp2 = 6
+        ElseIf Nt2 >= WtPi2(7) And Nt2 < WtPi2(8) Then
+            Wp2 = 7
+        ElseIf Nt2 >= WtPi2(8) And Nt2 < WtPi2(9) Then
+            Wp2 = 8
+        ElseIf Nt2 >= WtPi2(9) And Nt2 < WtPi2(10) Then
+            Wp2 = 9
+        ElseIf Nt2 >= WtPi2(10) And Nt2 < WtPi2(11) Then
+            Wp2 = 10
+        ElseIf Nt2 >= WtPi2(11) And Nt2 < WtPi2(12) Then
+            Wp2 = 11
+        ElseIf Nt2 >= WtPi2(12) And Nt2 < WtPi2(13) Then
+            Wp2 = 12
+        ElseIf Nt2 >= WtPi2(13) And Nt2 < WtPi2(14) Then
+            Wp2 = 13
+        Else
+            Wp2 = 0
+        End If
+        '実稼動時間算出
+        ' WtBt(0) = WtBt(0) + 2700
+        Select Case Wp2
+            Case 0
+                DeltaTime2 = Nt2 - St2
+            Case 1
+                DeltaTime2 = CInt(WtBt2(0) + (Nt2 - WtPi2(1)) * (1 - (WtLosR2(1) / 100)))
+            Case 2
+                DeltaTime2 = WtBt2(0) + WtBt2(1) + (Nt2 - WtPi2(2))
+            Case 3
+                DeltaTime2 = CInt(WtBt2(0) + WtBt2(1) + WtBt2(2) + (Nt2 - WtPi2(3)) * (1 - (WtLosR2(2) / 100)))
+            Case 4
+                DeltaTime2 = WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + (Nt2 - WtPi2(4))
+            Case 5
+                DeltaTime2 = CInt(WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + (Nt2 - WtPi2(5)) * (1 - WtLosR2(3) / 100))
+            Case 6
+                DeltaTime2 = WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + (Nt2 - WtPi2(6))
+            Case 7
+                DeltaTime2 = CInt(WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + (Nt2 - WtPi2(7)) * (1 - WtLosR2(4) / 100))
+            Case 8
+                DeltaTime2 = WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + WtBt2(7) + (Nt2 - WtPi2(8))
+            Case 9
+                DeltaTime2 = CInt(WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + WtBt2(7) + WtBt2(8) + (Nt2 - WtPi2(9)) * (1 - WtLosR2(5) / 100))
+            Case 10
+                DeltaTime2 = WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + WtBt2(7) + WtBt2(8) + WtBt2(9) + (Nt2 - WtPi2(10))
+            Case 11
+                DeltaTime2 = CInt(WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + WtBt2(7) + WtBt2(8) + WtBt2(9) + WtBt2(10) + (Nt2 - WtPi2(11)) * (1 - WtLosR2(6) / 100))
+            Case 12
+                DeltaTime2 = WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + WtBt2(7) + WtBt2(8) + WtBt2(9) + WtBt2(10) + WtBt2(11) + (Nt2 - WtPi2(12))
+            Case 13
+                DeltaTime2 = CInt(WtBt2(0) + WtBt2(1) + WtBt2(2) + WtBt2(3) + WtBt2(4) + WtBt2(5) + WtBt2(6) + WtBt2(7) + WtBt2(8) + WtBt2(9) + WtBt2(10) + WtBt2(11) + WtBt2(12) + (Nt2 - WtPi2(13)) * (1 - WtLosR2(7) / 100))
+            Case Else
+                DeltaTime2 = Nt2 - St2
+        End Select
+        TextBox2.Text = Str(Wp2)
+        TextBox3.Text = Str(Nt2)
+        '目標数量算出＆表示
+        Dim azh2 As Integer
+        Dim azm2 As Integer
+        Select Case Han2
+            Case 2
+                azh2 = CInt(Start2H)
+                azm2 = CInt(Start2M)
+            Case Else
+                azh2 = CInt(Cth)
+                azm2 = CInt(Ctm)
+        End Select
+        'If toriaezuFlag = False Then
+        '    For i As Short = 0 To 4
+        '        Trg(i) = CInt((DeltaTime / Tkt(i)))
+        '    Next i
+        'Else
+        Dim Takto2(4) As Double
+        If NowHour < azh2 Or (NowHour = azh2 And NowMinute < azm2) Then            'Ver2.0
+            ChokuFlag = False
+            For i As Short = 0 To 4
+                Takto2(i) = (Wt1Jisshitu / (Pln(j, i) / 2))
+                Trg(j, i) = CInt(DeltaTime2 / Takto2(i))
+                Trr(j, i) = CInt(DeltaTime2 / Tkt(j, i))
+            Next i
+        Else
+            ChokuChangeFlag = False
+            ChokuFlag = True
+            For i As Short = 0 To 4
+                Takto2(i) = (Wt2jisshitu / (Pln(j, i) / 2))
+                Trg(j, i) = CInt(Pln(j, i) / 2 + (DeltaTime2 - Wt1Jisshitu) / Takto2(i))
+                Trr(j, i) = CInt(Wt1Jisshitu / Tkt(j, i) + (DeltaTime2 - Wt1Jisshitu) / Tkt(j, i))
+            Next i
+            If NowHour = Rth And NowMinute = Rtm And NowSecond < 5 Then ReDrawFlag(1) = True 'Ver2.0 変更
+        End If
+        'End If
+        '合計部
+        For i As Short = 0 To 4
+            ax(i) = CInt(Trg(j, i))
+            bx(i) = CInt(Pln(j, i))
+        Next i
+        For i As Short = 0 To 4
+            sx(i) = CurCh(ClmInt(CInt(Str(ax(i)))))
+            If dtrg(j, i) <> sx(i) Or ReDrawFlag(1) Then
+                dtrg(j, i) = sx(i)
+                If ChokuFlag = False Then
+                    ChokuDataTrg1(j, i) = ax(i)
+                Else
+                    ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu / (Wt1Jisshitu / (bx(i) / 2))))
+                End If
+                WrTrgA(j, i) = CInt(sx(i))
+            End If
+        Next i
+        '１直部
+        For i As Short = 0 To 4
+            sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg1(j, i)))))
+            If dtrg1(i) <> sx(i) Or ReDrawFlag(1) Then
+                If ChokuFlag = True Then
+                    If ReDrawFlag(1) = False Then Exit For
+                    sx(i) = CurCh(Str(Pln(j, i) / 2))
+                End If
+                dtrg1(i) = sx(i)
+                WrTrgB(j, i) = CInt(sx(i))
+            End If
+        Next i
+        '２直部
+        For i As Short = 0 To 4
+            If ChokuFlag = True Then
+                sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg2(j, i)))))
+                WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+            End If
+            WrTrgC(j, i) = CInt(sx(i))
+        Next i
         ReDrawFlag(1) = False
     End Sub
 
@@ -1949,7 +2130,6 @@
                 'dpln(i) = ""
                 dtrg(j, i) = ""
                 dtrg1(i) = ""
-                dtrg2(i) = ""
                 drat(i) = ""
                 'dck1(i) = ""
                 'dck2(i) = ""
