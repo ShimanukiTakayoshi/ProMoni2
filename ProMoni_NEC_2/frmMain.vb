@@ -234,7 +234,11 @@
         For j As Short = 0 To 1
             For i As Short = 0 To 4
                 sx(i) = CurCh(ClmInt(CInt(Str(Pln(j, i)))))
-                sy(i) = CurCh(ClmInt(CInt(Str(Pln(j, i) / 2))))
+                If j = 1 And L2choku1Nomi = 1 Then
+                    sy(i) = CurCh(ClmInt(CInt(Str(Pln(j, i)))))
+                Else
+                    sy(i) = CurCh(ClmInt(CInt(Str(Pln(j, i) / 2))))
+                End If
                 WrPlnA(j, i) = CInt(sx(i))
                 WrPlnB(j, i) = CInt(sy(i))
             Next i
@@ -1001,10 +1005,17 @@
         ''--- 
         '合計表示
         For i As Integer = 0 To 4
-            Pr(g, WrPlnA(Ln, i), 360 + (160 * i), 520, gcBlue, 26)
-            Pr(g, WrTrgA(Ln, i), 360 + (160 * i), 570, gcWhite, 26)
-            Pr(g, WrCntA(Ln, i), 360 + (160 * i), 620, gcBlack, 26)
-            Pr(g, WrDelA(Ln, i), 360 + (160 * i), 670, gcBlack, 26)
+            If L2choku1Nomi = 1 Then
+                Pr(g, WrPlnB(Ln, i), 360 + (160 * i), 520, gcBlue, 26)
+                Pr(g, WrTrgB(Ln, i), 360 + (160 * i), 570, gcWhite, 26)
+                Pr(g, WrCntB(Ln, i), 360 + (160 * i), 620, gcBlack, 26)
+                Pr(g, WrDelB(Ln, i), 360 + (160 * i), 670, gcBlack, 26)
+            Else
+                Pr(g, WrPlnA(Ln, i), 360 + (160 * i), 520, gcBlue, 26)
+                Pr(g, WrTrgA(Ln, i), 360 + (160 * i), 570, gcWhite, 26)
+                Pr(g, WrCntA(Ln, i), 360 + (160 * i), 620, gcBlack, 26)
+                Pr(g, WrDelA(Ln, i), 360 + (160 * i), 670, gcBlack, 26)
+            End If
         Next
         '1直表示
         For i As Integer = 0 To 4
@@ -1014,13 +1025,15 @@
             Pr(g, WrDelB(Ln, i), 360 + (160 * i), 270, gcBlack, 26)
         Next
         '2直表示
-        If ChokuFlag = True Then
-            For i As Short = 0 To 4
-                Pr(g, WrPlnB(Ln, i), 360 + (160 * i), 320, gcBlue, 26)
-                Pr(g, WrTrgC(Ln, i), 360 + (160 * i), 370, gcWhite, 26)
-                Pr(g, WrCntC(Ln, i), 360 + (160 * i), 420, gcBlack, 26)
-                Pr(g, WrDelC(Ln, i), 360 + (160 * i), 470, gcBlack, 26)
-            Next
+        If Ln = 0 Or L2choku1Nomi = 0 Then
+            If ChokuFlag = True Then
+                For i As Short = 0 To 4
+                    Pr(g, WrPlnB(Ln, i), 360 + (160 * i), 320, gcBlue, 26)
+                    Pr(g, WrTrgC(Ln, i), 360 + (160 * i), 370, gcWhite, 26)
+                    Pr(g, WrCntC(Ln, i), 360 + (160 * i), 420, gcBlack, 26)
+                    Pr(g, WrDelC(Ln, i), 360 + (160 * i), 470, gcBlack, 26)
+                Next
+            End If
         End If
         '稼働率表示
         Dim gof As Integer = 0
@@ -1359,21 +1372,30 @@
             For i As Integer = 0 To 4
                 px = 70 + Hl + Hy * (i + 1) + 60
                 '合計表示
-                Pr(g, WrPlnA(j, i), px, Ht + Hx * (9 + 12 * j), gcBlue, pf)
-                Pr(g, WrTrgA(j, i), px, Ht + Hx * (10 + 12 * j), gcWhite, pf)
-                Pr(g, WrCntA(j, i), px, Ht + Hx * (11 + 12 * j), gcBlack, pf)
-                Pr(g, WrDelA(j, i), px, Ht + Hx * (12 + 12 * j), gcBlack, pf)
+                If j = 1 And L2choku1Nomi = 1 Then
+                    Pr(g, WrPlnB(j, i), px, Ht + Hx * (9 + 12 * j), gcBlue, pf)
+                    Pr(g, WrTrgB(j, i), px, Ht + Hx * (10 + 12 * j), gcWhite, pf)
+                    Pr(g, WrCntB(j, i), px, Ht + Hx * (11 + 12 * j), gcBlack, pf)
+                    Pr(g, WrDelB(j, i), px, Ht + Hx * (12 + 12 * j), gcBlack, pf)
+                Else
+                    Pr(g, WrPlnA(j, i), px, Ht + Hx * (9 + 12 * j), gcBlue, pf)
+                    Pr(g, WrTrgA(j, i), px, Ht + Hx * (10 + 12 * j), gcWhite, pf)
+                    Pr(g, WrCntA(j, i), px, Ht + Hx * (11 + 12 * j), gcBlack, pf)
+                    Pr(g, WrDelA(j, i), px, Ht + Hx * (12 + 12 * j), gcBlack, pf)
+                End If
                 '1直表示
                 Pr(g, WrPlnB(j, i), px, Ht + Hx * (1 + 12 * j), gcBlue, pf)
                 Pr(g, WrTrgB(j, i), px, Ht + Hx * (2 + 12 * j), gcWhite, pf)
                 Pr(g, WrCntB(j, i), px, Ht + Hx * (3 + 12 * j), gcBlack, pf)
                 Pr(g, WrDelB(j, i), px, Ht + Hx * (4 + 12 * j), gcBlack, pf)
                 '2直表示
-                If ChokuFlag = True Then
-                    Pr(g, WrPlnB(j, i), px, Ht + Hx * (5 + 12 * j), gcBlue, pf)
-                    Pr(g, WrTrgC(j, i), px, Ht + Hx * (6 + 12 * j), gcWhite, pf)
-                    Pr(g, WrCntC(j, i), px, Ht + Hx * (7 + 12 * j), gcBlack, pf)
-                    Pr(g, WrDelC(j, i), px, Ht + Hx * (8 + 12 * j), gcBlack, pf)
+                If j = 0 Or L2choku1Nomi = 0 Then
+                    If ChokuFlag = True Then
+                        Pr(g, WrPlnB(j, i), px, Ht + Hx * (5 + 12 * j), gcBlue, pf)
+                        Pr(g, WrTrgC(j, i), px, Ht + Hx * (6 + 12 * j), gcWhite, pf)
+                        Pr(g, WrCntC(j, i), px, Ht + Hx * (7 + 12 * j), gcBlack, pf)
+                        Pr(g, WrDelC(j, i), px, Ht + Hx * (8 + 12 * j), gcBlack, pf)
+                    End If
                 End If
             Next
             '稼働率表示
@@ -1666,21 +1688,30 @@
             For i As Integer = 0 To 4
                 px = 55 + Hl + Hy * (i + 1) + (Hw + 40) * j
                 '合計表示
-                Pr(g, WrPlnA(j, i), px, Ht + Hx * 9, gcBlue, pf)
-                Pr(g, WrTrgA(j, i), px, Ht + Hx * 10, gcWhite, pf)
-                Pr(g, WrCntA(j, i), px, Ht + Hx * 11, gcBlack, pf)
-                Pr(g, WrDelA(j, i), px, Ht + Hx * 12, gcBlack, pf)
+                If j = 1 And L2choku1Nomi = 1 Then
+                    Pr(g, WrPlnB(j, i), px, Ht + Hx * 9, gcBlue, pf)
+                    Pr(g, WrTrgB(j, i), px, Ht + Hx * 10, gcWhite, pf)
+                    Pr(g, WrCntB(j, i), px, Ht + Hx * 11, gcBlack, pf)
+                    Pr(g, WrDelB(j, i), px, Ht + Hx * 12, gcBlack, pf)
+                Else
+                    Pr(g, WrPlnA(j, i), px, Ht + Hx * 9, gcBlue, pf)
+                    Pr(g, WrTrgA(j, i), px, Ht + Hx * 10, gcWhite, pf)
+                    Pr(g, WrCntA(j, i), px, Ht + Hx * 11, gcBlack, pf)
+                    Pr(g, WrDelA(j, i), px, Ht + Hx * 12, gcBlack, pf)
+                End If
                 '1直表示
                 Pr(g, WrPlnB(j, i), px, Ht + Hx * 1, gcBlue, pf)
                 Pr(g, WrTrgB(j, i), px, Ht + Hx * 2, gcWhite, pf)
                 Pr(g, WrCntB(j, i), px, Ht + Hx * 3, gcBlack, pf)
                 Pr(g, WrDelB(j, i), px, Ht + Hx * 4, gcBlack, pf)
                 '2直表示
-                If ChokuFlag = True Then
-                    Pr(g, WrPlnB(j, i), px, Ht + Hx * 5, gcBlue, pf)
-                    Pr(g, WrTrgC(j, i), px, Ht + Hx * 6, gcWhite, pf)
-                    Pr(g, WrCntC(j, i), px, Ht + Hx * 7, gcBlack, pf)
-                    Pr(g, WrDelC(j, i), px, Ht + Hx * 8, gcBlack, pf)
+                If j = 0 Or L2choku1Nomi = 0 Then
+                    If ChokuFlag = True Then
+                        Pr(g, WrPlnB(j, i), px, Ht + Hx * 5, gcBlue, pf)
+                        Pr(g, WrTrgC(j, i), px, Ht + Hx * 6, gcWhite, pf)
+                        Pr(g, WrCntC(j, i), px, Ht + Hx * 7, gcBlack, pf)
+                        Pr(g, WrDelC(j, i), px, Ht + Hx * 8, gcBlack, pf)
+                    End If
                 End If
             Next
             '稼働率表示
