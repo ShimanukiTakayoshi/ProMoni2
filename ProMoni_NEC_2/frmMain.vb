@@ -576,16 +576,15 @@
                 azh2 = CInt(Cth)
                 azm2 = CInt(Ctm)
         End Select
-        'If toriaezuFlag = False Then
-        '    For i As Short = 0 To 4
-        '        Trg(i) = CInt((DeltaTime / Tkt(i)))
-        '    Next i
-        'Else
         Dim Takto2(4) As Double
         If NowHour < azh2 Or (NowHour = azh2 And NowMinute < azm2) Then            'Ver2.0
             ChokuFlag = False
             For i As Short = 0 To 4
-                Takto2(i) = (Wt1Jisshitu2 / (Pln(j, i) / 2))
+                If L2choku1Nomi = 0 Then
+                    Takto2(i) = (Wt1Jisshitu2 / (Pln(j, i) / 2))
+                Else
+                    Takto2(i) = (Wt1Jisshitu2 / (Pln(j, i)))
+                End If
                 Trg(j, i) = CInt(DeltaTime2 / Takto2(i))
                 Trr(j, i) = CInt(DeltaTime2 / Tkt(j, i))
             Next i
@@ -593,7 +592,11 @@
             ChokuChangeFlag = False
             ChokuFlag = True
             For i As Short = 0 To 4
-                Takto2(i) = (Wt2jisshitu2 / (Pln(j, i) / 2))
+                If L2choku1Nomi = 0 Then
+                    Takto2(i) = (Wt2jisshitu2 / (Pln(j, i) / 2))
+                Else
+                    Takto2(i) = (Wt2jisshitu2 / (Pln(j, i)))
+                End If
                 Trg(j, i) = CInt(Pln(j, i) / 2 + (DeltaTime2 - Wt1Jisshitu2) / Takto2(i))
                 Trr(j, i) = CInt(Wt1Jisshitu2 / Tkt(j, i) + (DeltaTime2 - Wt1Jisshitu2) / Tkt(j, i))
             Next i
@@ -612,7 +615,11 @@
                 If ChokuFlag = False Then
                     ChokuDataTrg1(j, i) = ax(i)
                 Else
-                    ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu2 / (Wt1Jisshitu2 / (bx(i) / 2))))
+                    If L2choku1Nomi = 0 Then
+                        ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu2 / (Wt1Jisshitu2 / (bx(i) / 2))))
+                    Else
+                        ChokuDataTrg2(j, i) = CInt(ax(i) - (Wt1Jisshitu2 / (Wt1Jisshitu2 / (bx(i)))))
+                    End If
                 End If
                 WrTrgA(j, i) = CInt(sx(i))
             End If
@@ -623,19 +630,27 @@
             If dtrg1(i) <> sx(i) Or ReDrawFlag(1) Then
                 If ChokuFlag = True Then
                     If ReDrawFlag(1) = False Then Exit For
-                    sx(i) = CurCh(Str(Pln(j, i) / 2))
+                    If L2choku1Nomi = 0 Then
+                        sx(i) = CurCh(Str(Pln(j, i) / 2))
+                    Else
+                        sx(i) = CurCh(Str(Pln(j, i)))
+                    End If
                 End If
-                dtrg1(i) = sx(i)
-                WrTrgB(j, i) = CInt(sx(i))
-            End If
+                    dtrg1(i) = sx(i)
+                    WrTrgB(j, i) = CInt(sx(i))
+                End If
         Next i
         '２直部
         For i As Short = 0 To 4
             If ChokuFlag = True Then
                 sx(i) = CurCh(ClmInt(CInt(Str(ChokuDataTrg2(j, i)))))
-                WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+                If L2choku1Nomi = 0 Then
+                    WrTrgB(j, i) = CInt(Pln(j, i) / 2)
+                Else
+                    WrTrgB(j, i) = CInt(Pln(j, i))
+                End If
             End If
-            WrTrgC(j, i) = CInt(sx(i))
+                WrTrgC(j, i) = CInt(sx(i))
         Next i
         ReDrawFlag(1) = False
     End Sub
