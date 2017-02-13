@@ -87,7 +87,7 @@
     Public DekidakaHosei(1) As Integer         '月度出来高補正値
 
     Public MemNowCh1(1, 4) As String           '一時保存用実績ﾃﾞｰﾀ
-    Public DebugMode As Boolean = False      'ﾃﾞﾊﾞｯｸﾞﾓｰﾄﾞ切換ﾌﾗｸﾞ
+    Public DebugMode As Boolean = True      'ﾃﾞﾊﾞｯｸﾞﾓｰﾄﾞ切換ﾌﾗｸﾞ
 
     Public Gp(2) As Integer                 '班別実績数
     Public Gp2(2) As Integer                 '班別実績数
@@ -579,64 +579,42 @@
         For i As Short = 0 To 9
             PortNo(i) = i
         Next i
-        Ret = DioInpMultiByte(0, PortNo, 10, Data)
-        '百分率計算（100%以上の場合は100%にする）
-        If EmExMode Then
-            x(0) = CSng((Data(3) * 256 + Data(2)) / 100)
-            x(1) = CSng((Data(5) * 256 + Data(4)) / 100)
-            x(2) = CSng((Data(7) * 256 + Data(6)) / 100)
-            If x(0) > 100 Then x(0) = 100
-            If x(1) > 100 Then x(1) = 100
-            If x(2) > 100 Then x(2) = 100
-        Else
-            x(0) = CSng((Data(1) * 256 + Data(0)) / 100)
-            x(1) = CSng((Data(3) * 256 + Data(2)) / 100)
-            x(3) = CSng((Data(5) * 256 + Data(4)) / 100)
-            x(4) = CSng((Data(7) * 256 + Data(6)) / 100)
-            x(5) = CSng((Data(9) * 256 + Data(8)) / 100)
-            If NowC(Ln, 5) > 0 Then
-                x(2) = CSng(NowC(Ln, 6) / NowC(Ln, 5) * 100)
+        If DebugMode = False Then
+            Ret = DioInpMultiByte(0, PortNo, 10, Data)
+            '百分率計算（100%以上の場合は100%にする）
+            If EmExMode Then
+                x(0) = CSng((Data(3) * 256 + Data(2)) / 100)
+                x(1) = CSng((Data(5) * 256 + Data(4)) / 100)
+                x(2) = CSng((Data(7) * 256 + Data(6)) / 100)
+                If x(0) > 100 Then x(0) = 100
+                If x(1) > 100 Then x(1) = 100
+                If x(2) > 100 Then x(2) = 100
             Else
-                x(2) = 0
+                x(0) = CSng((Data(1) * 256 + Data(0)) / 100)
+                x(1) = CSng((Data(3) * 256 + Data(2)) / 100)
+                x(3) = CSng((Data(5) * 256 + Data(4)) / 100)
+                x(4) = CSng((Data(7) * 256 + Data(6)) / 100)
+                x(5) = CSng((Data(9) * 256 + Data(8)) / 100)
+                If NowC(Ln, 5) > 0 Then
+                    x(2) = CSng(NowC(Ln, 6) / NowC(Ln, 5) * 100)
+                Else
+                    x(2) = 0
+                End If
+                If x(0) > 100 Then x(0) = 100
+                If x(1) > 100 Then x(1) = 100
+                If x(2) > 99.9 Then x(2) = 99.9
+                If x(3) > 100 Then x(3) = 100
+                If x(4) > 100 Then x(4) = 100
+                If x(5) > 100 Then x(5) = 100
             End If
-            If x(0) > 100 Then x(0) = 100
-            If x(1) > 100 Then x(1) = 100
-            If x(2) > 99.9 Then x(2) = 99.9
-            If x(3) > 100 Then x(3) = 100
-            If x(4) > 100 Then x(4) = 100
-            If x(5) > 100 Then x(5) = 100
+            WrCho(0, 0) = x(0)
+            WrCho(0, 1) = x(1)
+            WrCho(0, 2) = x(2)
+            WrCho(1, 0) = x(3)
+            WrCho(1, 1) = x(4)
+            WrCho(1, 2) = x(5)
+            IO = Data
         End If
-        WrCho(0, 0) = x(0)
-        WrCho(0, 1) = x(1)
-        WrCho(0, 2) = x(2)
-        WrCho(1, 0) = x(3)
-        WrCho(1, 1) = x(4)
-        WrCho(1, 2) = x(5)
-        'Dim x1 As Single = CSng((Data(1) * 256 + Data(0)) / 100)
-        'Dim x2 As Single = CSng((Data(3) * 256 + Data(2)) / 100)
-        'Dim x3 As Single = 0
-        'Dim x4 As Single = CSng((Data(5) * 256 + Data(4)) / 100)
-        'Dim x5 As Single = CSng((Data(7) * 256 + Data(6)) / 100)
-        'Dim x6 As Single = CSng((Data(9) * 256 + Data(8)) / 100)
-        'If NowC(Ln, 5) > 0 Then
-        '    x3 = CSng(NowC(Ln, 6) / NowC(Ln, 5) * 100)
-        'Else
-        '    x3 = 0
-        'End If
-        'If x1 > 100 Then x1 = 100
-        'If x2 > 100 Then x2 = 100
-        'If x3 > 99.9 Then x3 = 99.9
-        'If x4 > 100 Then x4 = 100
-        'If x5 > 100 Then x5 = 100
-        'If x6 > 100 Then x6 = 100
-        'WrCho(0, 0) = x1
-        'WrCho(0, 1) = x2
-        'WrCho(0, 2) = x3
-        'WrCho(1, 0) = x4
-        'WrCho(1, 1) = x5
-        'WrCho(1, 2) = x6
-
-        IO = Data
     End Sub
 
     '画面描写

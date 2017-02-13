@@ -1113,28 +1113,30 @@ Friend Class Trigger
         Edit_Up(14) = _Edit_Up_14
         Edit_Up(15) = _Edit_Up_15
 
-        ' 画面アイテムの初期化
-        Edit_DeviceName.Text = "DIO000"
+        If frmMain.DebugMode = False Then
+            ' 画面アイテムの初期化
+            Edit_DeviceName.Text = "DIO000"
 
-        For i = 0 To 15
-            Check(i).Checked = True
-        Next
-        ' アップカウンタ
-        For i = 0 To 15
-            Edit_Up(i).Text = ""
-        Next i
+            For i = 0 To 15
+                Check(i).Checked = True
+            Next
+            ' アップカウンタ
+            For i = 0 To 15
+                Edit_Up(i).Text = ""
+            Next i
 
-        ' ダウンカウンタ
-        For i = 0 To 15
-            Edit_Down(i).Text = ""
-        Next i
+            ' ダウンカウンタ
+            For i = 0 To 15
+                Edit_Down(i).Text = ""
+            Next i
 
-        Edit_ReturnCode.Text = ""
+            Edit_ReturnCode.Text = ""
 
-        'DIO初期化
-        DioInitialize()
-        'DIOトリガ監視開始
-        DioTriggerScanStart()
+            'DIO初期化
+            DioInitialize()
+            'DIOトリガ監視開始
+            DioTriggerScanStart()
+        End If
 
         frmMain.Show()
 
@@ -1186,12 +1188,14 @@ Friend Class Trigger
     End Sub
 
     Public Sub DioEnd()
-        Ret = DioExit(Id0)
-        Ret = DioExit(Id)
-        DioGetErrorString(Ret, szError)
-        Edit_ReturnCode.Text = "Ret = " & Ret & ":" & szError.ToString()
-        Ret = DioExit(Id0)
-        Ret = DioExit(Id)
+        If frmMain.DebugMode = False Then
+            Ret = DioExit(Id0)
+            Ret = DioExit(Id)
+            DioGetErrorString(Ret, szError)
+            Edit_ReturnCode.Text = "Ret = " & Ret & ":" & szError.ToString()
+            Ret = DioExit(Id0)
+            Ret = DioExit(Id)
+        End If
         End
     End Sub
 
