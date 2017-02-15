@@ -1788,19 +1788,6 @@
                 Pr(g, GpData(j, i), 660, 496 + (i + j * 3) * hxx, gcBlack, 28)
             Next i
         Next j
-        'g.DrawString("aaa", gf20, gcRed, 500, 300)
-        'Dim fx As Short = 32
-        'Dim gc As System.Drawing.Brush
-        'gc = gcBlack
-        'Pr(g, 8, 388, 202, gc, fx)
-        'Pr(g, 88, 388, 222, gc, fx)
-        'Pr(g, 888, 388, 242, gc, fx)
-        'Pr(g, 8888, 388, 262, gc, fx)
-        'Pr(g, 88888, 388, 282, gc, fx)
-        'Pr(g, 888888, 388, 302, gc, fx)
-        'Pr(g, 8888888, 388, 322, gc, fx)
-        'Pr(g, 88888888, 388, 342, gc, fx)
-        'Pr(g, 888888888, 388, 362, gc, fx)
         'バッファー内容表示()
         myBuffer.Render()
         'バッファー内容クリア
