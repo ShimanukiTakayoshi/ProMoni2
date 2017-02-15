@@ -25,6 +25,7 @@ Friend Class Trigger
         'この呼び出しは、Windows フォーム デザイナで必要です。
         InitializeComponent()
     End Sub
+
     'Form は、コンポーネント一覧に後処理を実行するために dispose をオーバーライドします。
     Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
         If Disposing Then
@@ -34,6 +35,7 @@ Friend Class Trigger
         End If
         MyBase.Dispose(Disposing)
     End Sub
+
     'Windows フォーム デザイナで必要です。
     Private components As System.ComponentModel.IContainer
     Public ToolTip1 As System.Windows.Forms.ToolTip

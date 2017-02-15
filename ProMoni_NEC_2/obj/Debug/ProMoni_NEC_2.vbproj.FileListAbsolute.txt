@@ -103,3 +103,4 @@ C:\Users\pc155-PC\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni_NEC_2.vbpro
 C:\Users\pc155-PC\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.TrustInfo.xml
 C:\Users\pc155-PC\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.exe.manifest
 C:\Users\pc155-PC\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni2.application
+C:\Users\pc155-PC\Documents\ProMoni2\ProMoni_NEC_2\obj\Debug\ProMoni_NEC_2.vbprojResolveAssemblyReference.cache
