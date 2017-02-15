@@ -165,7 +165,6 @@
     Public dtrg(1, 4) As String                '達成率計算用1
     Public dtrg1(4) As String               '達成率計算用2
     Public dnow(1, 4) As String                '達成率計算用4
-    Public drat(4) As String                '稼働率計算用
     Public ReDrawFlag(10) As Boolean        '最描写ﾌﾗｸﾞ
 
     'ﾒｲﾝ
@@ -762,7 +761,6 @@
             sx(1) = tmpS(3)
             sx(2) = tmpS(4)
             For i As Short = 0 To 2
-                drat(i) = sx(i)
                 WrRat(j, i) = CInt(sx(i))
             Next
         Next j
@@ -2177,7 +2175,6 @@
                 'dpln(i) = ""
                 dtrg(j, i) = ""
                 dtrg1(i) = ""
-                drat(i) = ""
                 'dck1(i) = ""
                 'dck2(i) = ""
                 'dna(i) = ""
