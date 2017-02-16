@@ -165,7 +165,7 @@
                 End If
             Next
             For i As Short = 1 To 6
-                If StSecE(i) > StSecS(i + 1) Then
+                If StSecE(i) > StSecE(i + 1) Then
                     If MsgBox("｢停止時間｣の設定値が前後しています。", CType(vbOKCancel + vbExclamation, MsgBoxStyle)) = vbOK Then
                         WtSetNGFlag = True
                         Exit Sub
@@ -200,7 +200,7 @@
                 End If
             Next
             For i As Short = 1 To 6
-                If StSecE2(i) > StSecS2(i + 1) Then
+                If StSecE2(i) > StSecE2(i + 1) Then
                     If MsgBox("｢停止時間｣の設定値が前後しています。", CType(vbOKCancel + vbExclamation, MsgBoxStyle)) = vbOK Then
                         WtSetNGFlag = True
                         Exit Sub
