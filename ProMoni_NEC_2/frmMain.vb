@@ -1989,32 +1989,64 @@
         End Try
         '新月出来高ファイル生成
         If NewFileFlag Then
-            SvF1 = Strings.Left(CStr(Now), 4) + Strings.Mid(CStr(Now), 6, 2)
-            SvF1 = AppFolder & DataFolder & DekidakaFolder & "\Q" + SvF1 + ".txt"
-            Try
-                System.IO.File.Delete(SvF1)
-                Dim sw As System.IO.StreamWriter
-                sw = New System.IO.StreamWriter(SvF1, True, System.Text.Encoding.GetEncoding(932))
-                'sw.WriteLine("日付,日勤出来高,夜勤出来高")
-                For i As Long = 1 To 31
-                    sw.WriteLine(Trim(Str(i)) + ",0,0,0,0")
-                Next
-                sw.Close()
-                'SvFirstFlag = False
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-                Application.Exit()
-            End Try
-            For i As Short = 1 To 31
-                DekidakaDataDay(Ln, i) = 0
-                DekidakaDataNight(Ln, i) = 0
-            Next
-            For i As Short = 0 To 2
-                GpTotal(Ln, i) = 0
-                GpGeta(Ln, i) = 0
-            Next
+            DekidakaNewFile()
         End If
+        'If NewFileFlag Then
+        '    SvF1 = Strings.Left(CStr(Now), 4) + Strings.Mid(CStr(Now), 6, 2)
+        '    SvF1 = AppFolder & DataFolder & DekidakaFolder & "\Q" + SvF1 + ".txt"
+        '    Try
+        '        System.IO.File.Delete(SvF1)
+        '        Dim sw As System.IO.StreamWriter
+        '        sw = New System.IO.StreamWriter(SvF1, True, System.Text.Encoding.GetEncoding(932))
+        '        'sw.WriteLine("日付,日勤出来高,夜勤出来高")
+        '        For i As Long = 1 To 31
+        '            sw.WriteLine(Trim(Str(i)) + ",0,0,0,0")
+        '        Next
+        '        sw.Close()
+        '        'SvFirstFlag = False
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.Message)
+        '        Application.Exit()
+        '    End Try
+        '    For i As Short = 1 To 31
+        '        DekidakaDataDay(Ln, i) = 0
+        '        DekidakaDataNight(Ln, i) = 0
+        '    Next
+        '    For i As Short = 0 To 2
+        '        GpTotal(Ln, i) = 0
+        '        GpGeta(Ln, i) = 0
+        '    Next
+        'End If
     End Sub
+
+    Public Sub DekidakaNewFile()
+        Dim SvF1 As String
+        SvF1 = Strings.Left(CStr(Now), 4) + Mid(CStr(Now), 6, 2)
+        SvF1 = AppFolder & DataFolder & DekidakaFolder & "\Q" + SvF1 + ".txt"
+        Try
+            System.IO.File.Delete(SvF1)
+            Dim sw As System.IO.StreamWriter
+            sw = New System.IO.StreamWriter(SvF1, True, System.Text.Encoding.GetEncoding(932))
+            'sw.WriteLine("日付,日勤出来高,夜勤出来高")
+            For i As Long = 1 To 31
+                sw.WriteLine(Trim(Str(i)) + ",0,0,0,0")
+            Next
+            sw.Close()
+            'SvFirstFlag = False
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Application.Exit()
+        End Try
+        For i As Short = 1 To 31
+            DekidakaDataDay(Ln, i) = 0
+            DekidakaDataNight(Ln, i) = 0
+        Next
+        For i As Short = 0 To 2
+            GpTotal(Ln, i) = 0
+            GpGeta(Ln, i) = 0
+        Next
+    End Sub
+
 
     Public Sub WorkTimeCalc()
         'ライン１
@@ -2785,7 +2817,8 @@
         Try
             FileOpen(n, LdF1, OpenMode.Input)
         Catch ex As Exception
-            DekidakaHozon()
+            'DekidakaHozon()
+            DekidakaNewFile()
             FileOpen(n, LdF1, OpenMode.Input)
         End Try
         Do While Not EOF(n)
